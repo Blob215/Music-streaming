@@ -1,27 +1,28 @@
 <?php
 include_once("connection.php");
-$stmt = $conn->prepare("DROP TABLE IF EXISTS TblUser;
+$stmt = $conn->prepare("DROP TABLE IF EXISTS TblUsers;
 CREATE TABLE TblUsers 
 (UserID INT(7) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 Surname VARCHAR(20) NOT NULL,
 Forename VARCHAR(20) NOT NULL,
 Password VARCHAR(30) NOT NULL,
-Email address VARCHAR(50) NOT NULL,
-Phone number INT(11) NOT NULL,
-Role TINYINT(2))");
+Emailaddress VARCHAR(50) NOT NULL,
+Phonenumber INT(11) NOT NULL,
+Role INT(1))");
 $stmt->execute();
 $stmt->closeCursor();
 ?>
+
 
 <?php
 include_once("connection.php");
 $stmt = $conn->prepare("DROP TABLE IF EXISTS TblMusic;
 CREATE TABLE TblMusic
-(AlbumTitle VARCHAR(50) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+(AlbumTitle VARCHAR(50) PRIMARY KEY,
 Artist VARCHAR(50) NOT NULL,
 Genre VARCHAR(50) NOT NULL,
 SongTitle VARCHAR(20) NOT NULL,
-TitleNo. INT(4) NOT NULL,");
+TitleNo INT(4) NOT NULL)");
 $stmt->execute();
 $stmt->closeCursor();
 ?>
@@ -29,10 +30,11 @@ $stmt->closeCursor();
 <?php
 include_once("connection.php");
 $stmt = $conn->prepare("DROP TABLE IF EXISTS TblSearch;
-(AlbumTitle VARCHAR(50) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+CREATE TABLE TblSearch
+(AlbumTitle VARCHAR(50),
 Artist VARCHAR(50) NOT NULL,
 Genre VARCHAR(50) NOT NULL,
-SongTitle VARCHAR(20) NOT NULL,");
+SongTitle VARCHAR(20) NOT NULL)");
 $stmt->execute();
 $stmt->closeCursor();
 ?>
