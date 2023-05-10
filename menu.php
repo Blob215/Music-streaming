@@ -13,7 +13,7 @@ if (!isset($_SESSION['loggedinID']))
     
 </head>
 <body>
-   <h1>MENU</h1>
+   <h1 class="login">MENU</h1>
     <a href="buytuck.php">Create Order</a><br>
     <a href="vieworders.php">View Orders</a><br>
     <a href="logout.php">Log Out</a>

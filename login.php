@@ -2,13 +2,20 @@
 <html>
 <head>
    <title>Login</title>
-  
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
 
 <form action="login_process.php" method= "POST">
- User name:<input type="text" name="Username"><br>
- Password:<input type="password" name="Pword"><br>
+ <h3 class="login">User name:<input type="text" name="Username"></h3>
+ <h3 class="login">Password:<input type="password" name="Pword"></h3><br>
   <input type="submit" value="Login">
 </form>
 </body>
