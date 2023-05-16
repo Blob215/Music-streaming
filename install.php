@@ -39,3 +39,13 @@ SongTitle VARCHAR(20) NOT NULL)");
 $stmt->execute();
 $stmt->closeCursor();
 ?>
+
+<?php
+include_once("connection.php");
+$stmt = $conn-> prepare("DROP TABLE IF EXIST TblImages;
+CREATE TABLE TblImages
+(AlbumTitle VARCHAR(50) PRIMARY KEY,
+Image LONGBLOB)")
+$stmt->execute();
+$stmt->closeCursor();
+?>
