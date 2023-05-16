@@ -13,18 +13,5 @@ if (!isset($_SESSION['loggedinID']))
     
 </head>
 <body>
-   <h1 class="login">MENU</h1>
-    <a href="buytuck.php">Create Order</a><br>
-    <a href="vieworders.php">View Orders</a><br>
-    <a href="logout.php">Log Out</a>
-    <br>
-    <br>
-    <?php
-    if ($_SESSION["Role"]==1){
-        echo("<b> Admin Functions </b><br>");
-        echo ('<a href="tuck.php">Add Tuck</a><br>');
-        echo('<a href="users.php">Add User</a><br><br>');
-    }
-?>
 </body>
 </html>
