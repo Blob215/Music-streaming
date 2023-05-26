@@ -17,14 +17,10 @@ if ($stmt->rowCount() > 0) {
         $_SESSION['loggedinID']=$row["UserID"];
         if (!isset($_SESSION['backURL'])){
             $backURL= "menu.php";
-        }else{
+        }
+        else{
             $backURL=$_SESSION['backURL'];
         }
-        
-        header('Location: ' . $backURL);
-        unset($_SESSION['backURL']);
-        
-        
     }else{
         header('Location: login.php');
     }

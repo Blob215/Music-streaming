@@ -9,7 +9,7 @@ Forename VARCHAR(20) NOT NULL,
 Password VARCHAR(30) NOT NULL,
 Emailaddress VARCHAR(50) NOT NULL,
 Phonenumber INT(11) NOT NULL,
-Role INT(1))");
+Role TINYINT(1))");
 $stmt->execute();
 $stmt->closeCursor();
 ?>
@@ -46,6 +46,4 @@ $stmt = $conn-> prepare("DROP TABLE IF EXIST TblImages;
 CREATE TABLE TblImages
 (AlbumTitle VARCHAR(50) PRIMARY KEY,
 Image LONGBLOB)")
-$stmt->execute();
-$stmt->closeCursor();
 ?>
