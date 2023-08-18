@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Add New Music</title>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <title class="login">Add New Music</title>
 </head>
 <body>
     <h1>Add New Music to catalogue</h1>
