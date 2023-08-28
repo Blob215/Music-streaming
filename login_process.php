@@ -14,7 +14,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
         </script>");
     }
     else{
-        echo("<script> document.location.href='http://localhost/Library%20System/Login.php';
+        echo("<script> document.location.href='http://localhost/Library%20System/login.php';
         </script>");
 }
 }
