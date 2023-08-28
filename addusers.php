@@ -10,8 +10,6 @@ try{
 		case "Admin":
 			$role=1;
 			break;
-        case "Musician":
-            $role=2;
 		}
 
 	$username=$_POST["surname"].".".$_POST["forename"][0];
