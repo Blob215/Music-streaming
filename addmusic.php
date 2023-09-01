@@ -6,7 +6,7 @@
 </head>
 <body>
     <h1>Add New Music to catalogue</h1>
-<form action='additems.php' method='POST'>
+<form action='addmusicsql.php' method='POST'>
     AlbumTitle:<input type="text" name="albumtitle"><br>
     Artist:<input type="text" name="artist"><br>
     Genre:<input type="text" name="genre"><br>

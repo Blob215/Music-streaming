@@ -5,7 +5,7 @@
 </head>
 <body>
     <h1>Sign Up</h1>
-<form action='signupsql.php' method="POST">
+<form action='addusers.php' method="POST">
     Forename:<input type="text" name="forename"><br>
     Surname:<input type="text" name="surname"><br>
     Username:<input type="text" name="username"><br>
