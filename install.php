@@ -12,10 +12,7 @@ Phonenumber INT(11) NOT NULL,
 Role TINYINT(1))");
 $stmt->execute();
 $stmt->closeCursor();
-?>
 
-
-<?php
 include_once("connection.php");
 $stmt = $conn->prepare("DROP TABLE IF EXISTS TblMusic;
 CREATE TABLE TblMusic
@@ -26,9 +23,7 @@ SongTitle VARCHAR(20) NOT NULL,
 TitleNo INT(4) NOT NULL)");
 $stmt->execute();
 $stmt->closeCursor();
-?>
 
-<?php
 include_once("connection.php");
 $stmt = $conn->prepare("DROP TABLE IF EXISTS TblSearch;
 CREATE TABLE TblSearch
@@ -38,9 +33,7 @@ Genre VARCHAR(50) NOT NULL,
 SongTitle VARCHAR(20) NOT NULL)");
 $stmt->execute();
 $stmt->closeCursor();
-?>
 
-<?php
 include_once("connection.php");
 $stmt = $conn-> prepare("DROP TABLE IF EXIST TblImages;
 CREATE TABLE TblImages

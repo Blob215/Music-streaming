@@ -2,10 +2,14 @@
 <html>
 <head>
     <title>Sign Up</title>
+    <!-- Link to stylesheets and bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
 </head>
 <body>
     <h1>Sign Up</h1>
 <form action='addusers.php' method="POST">
+    UserID:<input type="text" name="userid"><br>
     Forename:<input type="text" name="forename"><br>
     Surname:<input type="text" name="surname"><br>
     Username:<input type="text" name="username"><br>

@@ -10,7 +10,7 @@ try{
     $stmt->bindParam(':genre',$_POST["Genre"]);
     $stmt->bindParam(':songtitle',$_POST["SongTitle"]);
     $stmt->bindParam(':titleno',$_POST["TitleNo"]);
-    $stmt->bindParam(':image',$_post['Image'])
+    $stmt->bindParam(':image',$_post['Image']);
     $stmt->execute();
     header("location:addmusic.php");
 }
