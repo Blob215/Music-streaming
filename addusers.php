@@ -5,8 +5,7 @@ try{
 include_once("connection.php");
 array_map("htmlspecialchars",$_POST);
 
-$stmt=$conn->prepare("INSERT INTO tblusers(UserID,
-Forename,Surname,Username,Password,Emailaddress,Phonenumber,Role)VALUES(NULL,:forename,:surname, :username,:password,:emailaddress,:phonenumber,:role)");
+$stmt=$conn->prepareINSERT INTO `tblusers` (`UserID`, `Username`, `Surname`, `Forename`, `Password`, `Emailaddress`, `Phonenumber`, `Role`) VALUES VALUES(NULL,:UserID,:forename,:surname, :username,:password,:emailaddress,:phonenumber,:role)");
 $role=0;
 
 $stmt->binParam(':forename',$_POST["forename"]);
