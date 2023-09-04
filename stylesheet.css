@@ -3,5 +3,13 @@
     font-family: 'Times New Roman', Times, serif;
     padding-left: 100px;
     padding-right: 150px;
+    color: white;
+    padding-top: 50px;
+}
+/*Sign up text font*/
+.singup {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: white;
+    padding-top: 50px;
 }
 
