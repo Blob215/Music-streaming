@@ -12,10 +12,10 @@
         top: 0;
     width: 100%}
         .navbar navbar-inverse  {background-color: #000000;}
-        .navbar-brand a {color:white;}
-        .navbar-header a{color:white;}
+        .navbar-brand a {color:black;}
+        .navbar-header a{color:black;}
     </style>
-<nav class="navbar navbar-inverse" style="background-color:#ffffff; class='font-family: 'Times New Roman', Times, serif;">
+<nav class="navbar navbar-inverse" style="background-color:#000000; class='font-family: 'Times New Roman', Times, serif;">
     <div class = "container-fluid">
         <ul class="nav navbar-nav">
             <li><a href="library.php">Library</a></li>

@@ -3,7 +3,8 @@ try{
     include_once("connection.php");
     array_map("htmlspeicalchars", $_POST);
     $stmt=$conn->prepare("INSERT INTO
-    tblmusic(AlbumTitle,Artist,Genre,SongTitle,TitleNo,Image)VAlUES(:albumtitle,:artist,:genre,:songtitle,:titleno)");
+    tblmusic(AlbumTitle,Artist,Genre,SongTitle,TitleNo,Image)
+    VAlUES(:albumtitle,:artist,:genre,:songtitle,:titleno)");
 
     $stmt->bindParam(':albumtitle',$_POST["AlbumTitle"]);
     $stmt->bindParam(':artist',$_POST["Artist"]);

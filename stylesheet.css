@@ -12,4 +12,9 @@
     color: white;
     padding-top: 50px;
 }
-
+/*Add admin page font*/
+.admin {
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    padding-left: 25px;
+    color:white
+}
