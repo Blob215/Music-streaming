@@ -12,8 +12,8 @@
     </style>
 </head>
 <body>
-    <h1>Sign Up</h1>
-<form action='addusers.php' method="POST" class="singup">
+    <h1 class="signup">Sign Up</h1>
+<form class="signup" action='addusers.php' method="POST">
     UserID:<input type="text" name="userid"><br>
     Forename:<input type="text" name="forename"><br>
     Surname:<input type="text" name="surname"><br>

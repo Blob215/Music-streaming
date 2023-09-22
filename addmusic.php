@@ -13,6 +13,7 @@
     SongTitle:<input type="text" name="songtitle"><br>
     TitleNo:<input type="number" name="titleno"><br>
     Image:<input type="image" name="image"><br>
+    <br>
     <input type="submit" value="Add New Music"><br>
 </form>
 </body>

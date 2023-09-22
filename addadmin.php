@@ -13,7 +13,7 @@
 </head>
 <body>
     <h1 class="admin">Add administrators</h1>
-<form action='addadminsql.php' method="POST">
+<form class="admin" action='addadminsql.php' method="POST">
     UserID:<input type="text" name="userid"><br>
     Forename:<input type="text" name="forename"><br>
     Surname:<input type="text" name="surname"><br>

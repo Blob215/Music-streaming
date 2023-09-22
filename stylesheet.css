@@ -7,14 +7,15 @@
     padding-top: 50px;
 }
 /*Sign up text font*/
-.singup {
-    font-family: Georgia, 'Times New Roman', Times, serif;
+.signup {
+    padding-left: 30px;
     color: white;
-    padding-top: 50px;
+    padding-top: 30px;
 }
 /*Add admin page font*/
 .admin {
-    font-family:Georgia, 'Times New Roman', Times, serif;
-    padding-left: 25px;
-    color:white
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding-left: 30px;
+    color:white;
+    padding-top: 30px;
 }
