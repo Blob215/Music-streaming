@@ -20,7 +20,8 @@ CREATE TABLE TblMusic
 Artist VARCHAR(50) NOT NULL,
 Genre VARCHAR(50) NOT NULL,
 SongTitle VARCHAR(20) NOT NULL,
-TitleNo INT(4) NOT NULL)");
+TitleNo INT(4) NOT NULL,
+Image LONGBLOB)");
 $stmt->execute();
 $stmt->closeCursor();
 
@@ -33,10 +34,3 @@ Genre VARCHAR(50) NOT NULL,
 SongTitle VARCHAR(20) NOT NULL)");
 $stmt->execute();
 $stmt->closeCursor();
-
-include_once("connection.php");
-$stmt = $conn-> prepare("DROP TABLE IF EXIST TblImages;
-CREATE TABLE TblImages
-(AlbumTitle VARCHAR(50) PRIMARY KEY,
-Image LONGBLOB)")
-?>
