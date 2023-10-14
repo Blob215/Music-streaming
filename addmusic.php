@@ -12,8 +12,8 @@
     Genre:<input type="text" name="genre"><br>
     SongTitle:<input type="text" name="songtitle"><br>
     TitleNo:<input type="number" name="titleno"><br>
-    Image:<input type="image" name="image"><br>
-    <br>
+    <form action="upload.php" method="post" enctype="multipart/form-data"> 
+    Select image to upload:<input type="file" name="fileToUpload" id="fileToUpload"><br>
     <input type="submit" value="Add New Music"><br>
 </form>
 </body>

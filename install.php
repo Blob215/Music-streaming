@@ -21,7 +21,7 @@ Artist VARCHAR(50) NOT NULL,
 Genre VARCHAR(50) NOT NULL,
 SongTitle VARCHAR(20) NOT NULL,
 TitleNo INT(4) NOT NULL,
-Image LONGBLOB)");
+Image VARCHAR(100)");
 $stmt->execute();
 $stmt->closeCursor();
 
