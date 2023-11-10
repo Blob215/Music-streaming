@@ -19,8 +19,8 @@ CREATE TABLE TblMusic
 Artist VARCHAR(50) NOT NULL,
 Genre VARCHAR(50) NOT NULL,
 SongTitle VARCHAR(20) NOT NULL,
-TitleNo INT(4) NOT NULL)
-Image VARCAHR(100))");
+TitleNo INT(4) NOT NULL,
+Image VARCHAR(100))");
 $stmt->execute();
 
 include_once("connection.php");

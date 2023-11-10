@@ -11,14 +11,30 @@ try{
     $stmt->bindParam(':genre',$_POST["Genre"]);
     $stmt->bindParam(':songtitle',$_POST["SongTitle"]);
     $stmt->bindParam(':titleno',$_POST["TitleNo"]);
-    $stmt->bindParam(':image',$_post['image']);
-    $stmt->execute();
-    header("location:addmusic.php");
-}
+    // upload image file
+    $stmt->bindParam(':image',$_FILES["image"]["name"]);
 
-catch(PDOException $e)
-{
-    $conn=null;
-    echo "Some details are incorrect, please try again";
-    header("Refresh: 5; url=addmusic.php");
-}
+    $stmt->execute();
+
+    $target_dir = "image/";
+    print_r($_FILES);
+    $target_file = $target_dir . basename($_FILES["image"]["name"]);
+    echo $target_file;
+    $uploadOk = 1;
+    $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+    // Check if the file has been uploaded
+    if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
+    echo "The file ". htmlspecialchars( basename( $_FILES["image"]["name"])). " has been uploaded.";
+  } else {
+    echo "Sorry, there was an error uploading your file.";
+  }
+    header("location:addmusic.php");
+    }
+
+    catch(PDOException $e)
+    {
+        $conn=null;
+        echo "Some details are incorrect, please try again";
+        header("Refresh: 5; url=addmusic.php");
+    }
+?>

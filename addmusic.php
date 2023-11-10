@@ -3,6 +3,11 @@
 <head>
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
     <title class="login">Add New Music</title>
+        <style>
+            img{
+                width:50%;
+            }
+        </style>
 </head>
 <body>
     <h1>Add New Music to catalogue</h1>
@@ -12,8 +17,7 @@
     Genre:<input type="text" name="genre"><br>
     SongTitle:<input type="text" name="songtitle"><br>
     TitleNo:<input type="number" name="titleno"><br>
-    <form action="upload.php" method="post" enctype="multipart/form-data"> 
-    Select image to upload:<input type="file" name="fileToUpload" id="fileToUpload"><br>
+    Image:<input type="file" id="image" name="image" accept="image/"><br>
     <input type="submit" value="Add New Music"><br>
 </form>
 </body>
