@@ -25,9 +25,12 @@
     </div>
     </nav>
     <br>
-<h7 class="about"> This is a website that hosts music, that is built for user-friendly interactions while also providing artists a platform to upload their music.
-    At the bottom of this page, you will find a button that takes you back to the homepage. If you click this you will see multiple options, if you already
-    an account, please click the login button and enter your username and password in order to access your library. So what's the scenario</h4>
+<h7 class="about"> This is a website that hosts music, that is built for user-friendly interactions while also providing artists a platform to upload their music. <br></h4>
+<h7 class="about">At the bottom of this page, you will find a button that takes you back to the homepage. If you click this you will see multiple options, if you already have an account,<br></h4>
+<h7 class="about">please click the login button and enter your username and password in order to access your library. So what's the scenario<br></h4>   
 
+    <div style="position: absolute; bottom: 5px; background-color: black">
+    <li><a href="menu.php">Go back to homepage</a></li>
+    </div>
 </body>
 </html>
