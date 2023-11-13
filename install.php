@@ -20,7 +20,7 @@ Artist VARCHAR(50) NOT NULL,
 Genre VARCHAR(50) NOT NULL,
 SongTitle VARCHAR(20) NOT NULL,
 TitleNo INT(4) NOT NULL,
-Image VARCHAR(100))");
+Image VARCHAR(255) NOT NULL,)");
 $stmt->execute();
 
 include_once("connection.php");

@@ -19,3 +19,11 @@
     color:white;
     padding-top: 30px;
 }
+/*About page*/
+.about {
+    font-family: 'Times New Roman', Times, serif;
+    padding-left: 50px;
+    color:black;
+    padding-right: 50px;
+    padding-top: 150px;
+}

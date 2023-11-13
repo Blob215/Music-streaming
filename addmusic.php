@@ -17,7 +17,7 @@
     Genre:<input type="text" name="genre"><br>
     SongTitle:<input type="text" name="songtitle"><br>
     TitleNo:<input type="number" name="titleno"><br>
-    Image:<input type="file" id="image" name="image" accept="image/"><br>
+    Image: <input type="file" id="piccy" name="piccy" accept="image/*"><br>
     <input type="submit" value="Add New Music"><br>
 </form>
 </body>
