@@ -1,4 +1,5 @@
 <html>
+<title>About page</title>
 <?php
     session_start();
     ?>
