@@ -1,7 +1,9 @@
 <?php
 include_once("connection.php");
-$stmt = $conn->prepare("DROP TABLE IF EXISTS TblUsers;
-CREATE TABLE TblUsers 
+
+
+$stmt = $conn->prepare("DROP TABLE IF EXISTS tblUsers;
+CREATE TABLE tblUsers 
 (UserID INT(7) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 Username VARCHAR(20) NOT NULL,
 Surname VARCHAR(20) NOT NULL,
@@ -11,23 +13,28 @@ Emailaddress VARCHAR(50) NOT NULL,
 Phonenumber INT(11) NOT NULL,
 Role TINYINT(1))");
 $stmt->execute();
+$stmt->closeCursor();
 
-include_once("connection.php");
+
 $stmt = $conn->prepare("DROP TABLE IF EXISTS TblMusic;
-CREATE TABLE TblMusic
+CREATE TABLE tblMusic
 (AlbumTitle VARCHAR(50) PRIMARY KEY,
 Artist VARCHAR(50) NOT NULL,
 Genre VARCHAR(50) NOT NULL,
 SongTitle VARCHAR(20) NOT NULL,
 TitleNo INT(4) NOT NULL,
-Image VARCHAR(255) NOT NULL,)");
+Image VARCHAR(255) NOT NULL)");
 $stmt->execute();
+$stmt->closeCursor();
 
-include_once("connection.php");
-$stmt = $conn->prepare("DROP TABLE IF EXISTS TblSearch;
-CREATE TABLE TblSearch
+
+$stmt = $conn->prepare("DROP TABLE IF EXISTS tblSearch;
+CREATE TABLE tblSearch
 (AlbumTitle VARCHAR(50) PRIMARY KEY,
 Artist VARCHAR(50) NOT NULL,
 Genre VARCHAR(50) NOT NULL,
 SongTitle VARCHAR(20) NOT NULL)");
 $stmt->execute();
+$stmt->closeCursor();
+
+?>
