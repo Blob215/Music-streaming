@@ -1,4 +1,5 @@
 <?php
+try {
 include_once("connection.php");
 
 
@@ -13,8 +14,7 @@ Emailaddress VARCHAR(50) NOT NULL,
 Phonenumber INT(11) NOT NULL,
 Role TINYINT(1))");
 $stmt->execute();
-$stmt->closeCursor();
-
+$stmt->closeCursor(); 
 
 $stmt = $conn->prepare("DROP TABLE IF EXISTS TblMusic;
 CREATE TABLE tblMusic
@@ -22,10 +22,10 @@ CREATE TABLE tblMusic
 Artist VARCHAR(50) NOT NULL,
 Genre VARCHAR(50) NOT NULL,
 SongTitle VARCHAR(20) NOT NULL,
-TitleNo INT(4) NOT NULL,
-Image VARCHAR(255) NOT NULL)");
+TitleNo INT(1) NOT NULL)");
 $stmt->execute();
-$stmt->closeCursor();
+$stmt->closeCursor(); 
+
 
 
 $stmt = $conn->prepare("DROP TABLE IF EXISTS tblSearch;
@@ -35,6 +35,12 @@ Artist VARCHAR(50) NOT NULL,
 Genre VARCHAR(50) NOT NULL,
 SongTitle VARCHAR(20) NOT NULL)");
 $stmt->execute();
-$stmt->closeCursor();
+$stmt->closeCursor(); 
 
+}
+catch(PDOException $e)
+{
+    echo $sql . "<br>" . $e->getMessage();
+}
+$conn=Null;
 ?>
