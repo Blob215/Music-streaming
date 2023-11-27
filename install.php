@@ -22,7 +22,8 @@ CREATE TABLE tblMusic
 Artist VARCHAR(50) NOT NULL,
 Genre VARCHAR(50) NOT NULL,
 SongTitle VARCHAR(20) NOT NULL,
-TitleNo INT(1) NOT NULL)");
+TitleNo INT(1) NOT NULL,
+Image VARCHAR(255) NOT NULL)");
 $stmt->execute();
 $stmt->closeCursor(); 
 
