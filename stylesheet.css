@@ -27,3 +27,9 @@
     padding-right: 50px;
     padding-top: 150px;
 }
+/*Add music page*/
+.addmusic {
+    font-family: 'Courier New', Courier, monospace;
+    padding-left: 150px;
+    color: white;
+}
