@@ -38,6 +38,21 @@ SongTitle VARCHAR(20) NOT NULL)");
 $stmt->execute();
 $stmt->closeCursor(); 
 
+$stmt = $conn->prepare("DROP TABLE IF EXISTS tblPreferences;
+CREATE TABLE tblPreferences
+(PreferenceID INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+UserID INT(6) NOT NULL,
+PreferenceType CHAR(1) NOT NULL,
+Prefernce VARCHAR(20))");
+$stmt->execute();
+$stmt->closeCursor();
+
+$stmt = $conn->prepare("DROP TABLE IF EXISTS tblGenres;
+CREATE TABLE TblGenres
+(Genre VARCHAR(20))");
+$stmt->execute();
+$stmt->closeCursor();
+
 }
 catch(PDOException $e)
 {
