@@ -17,17 +17,15 @@ include_once('connection.php');
 ?>
 <?php
 // How the boxes are generated
-$stmt = $conn->prepare("SELECT TblGenres.Genre, TblPreferences.PreferenceID FROM TblGenres LEFT JOIN TblPreferences ON
-TblPreferences.Preference = TblGenres.Genre AND UserID = :userif ORDER BY TblGenres.Genre ASC");
-$stmt->bindParam(':userid', $_SESSION['userid']);
+$stmt = $conn->prepare("SELECT Genre FROM TblGenres  ORDER BY Genre ASC");
 $stmt->execute();
 while ($row =$stmt->fetch(PDO::FETCH_ASSOC))
 {
-    ?><iput name="check[]" multiple="multiple" id="<?php
-    echo $row['Genre'];
+    ?><input name="check[]" multiple="multiple" id=".<?php echo $row['Genre'];
     ?>
-    " type="checkbox" style='padding: 10px;' value="<?php echo $row['Genre'];?>" <?php if ($row['PreferenceID'] != null) echo 'checked'; ?> >
-    <label for="<?php echo $row['Genre']; ?>"> <?php echo $row['Genre'];?></label>
+    " type="checkbox" style='padding: 10px;' value="<?php echo $row['Genre'];?>" 
+     >
+    <label for="<?php echo $row['Genre']; ?>"> <?php echo $row['Genre'];?><br></label>
     </td></tr>
     <?php
 }
