@@ -17,8 +17,8 @@ include_once('connection.php');
 ?>
 <?php
 // How the boxes are generated
-$stmt = $conn->prepare("SELECT TblGENRES.GEnre, TblPreferences.PreferenceID FROM TblGenres LEFT JOIN TblPreferenecs ON
-TblPreferences.Preference = TblGenres.Genre AND UserID = :userif ORDER BY TblGerres.Genre ASC");
+$stmt = $conn->prepare("SELECT TblGenres.Genre, TblPreferences.PreferenceID FROM TblGenres LEFT JOIN TblPreferences ON
+TblPreferences.Preference = TblGenres.Genre AND UserID = :userif ORDER BY TblGenres.Genre ASC");
 $stmt->bindParam(':userid', $_SESSION['userid']);
 $stmt->execute();
 while ($row =$stmt->fetch(PDO::FETCH_ASSOC))
