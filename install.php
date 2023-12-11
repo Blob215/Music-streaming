@@ -18,8 +18,7 @@ $stmt->closeCursor();
 
 $stmt = $conn->prepare("DROP TABLE IF EXISTS TblMusic;
 CREATE TABLE tblMusic
-(AlbumTitle VARCHAR(50) PRIMARY KEY,
-Artist VARCHAR(50) NOT NULL,
+(Artist VARCHAR(50) NOT NULL,
 Genre VARCHAR(50) NOT NULL,
 SongTitle VARCHAR(20) NOT NULL,
 TitleNo INT(1) NOT NULL,
@@ -27,23 +26,20 @@ Image VARCHAR(255) NOT NULL)");
 $stmt->execute();
 $stmt->closeCursor(); 
 
-
-
-$stmt = $conn->prepare("DROP TABLE IF EXISTS tblSearch;
-CREATE TABLE tblSearch
-(AlbumTitle VARCHAR(50) PRIMARY KEY,
+$stmt = $conn->prepare("DROP TABLE IF EXISTS TblLibrary
+(UserID INT(7) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 Artist VARCHAR(50) NOT NULL,
 Genre VARCHAR(50) NOT NULL,
-SongTitle VARCHAR(20) NOT NULL)");
+SongTitle VARCHAR(20) NOT NULL,
+Image VARCHAR(255)");
 $stmt->execute();
-$stmt->closeCursor(); 
+$stmt->closeCursor();
 
 $stmt = $conn->prepare("DROP TABLE IF EXISTS tblPreferences;
 CREATE TABLE tblPreferences
 (PreferenceID INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 UserID INT(6) NOT NULL,
-PreferenceType CHAR(1) NOT NULL,
-Preference VARCHAR(20))");
+Genre VARCHAR(50) NOT NULL");
 $stmt->execute();
 $stmt->closeCursor();
 
