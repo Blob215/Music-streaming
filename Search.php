@@ -26,6 +26,22 @@
 <form action="addmusic.php" method="GET">
 <input id="search" type="text" placeholder="Type here">
 <input id="submit" type="submit" value="Search">
+
+<?php
+session_start(); 
+include_once ("connection.php");
+$stmt = $conn->prepare('SELECT * FROM tblMusic');
+$stmt->execute();
+$results = $stmt->fetchAll();
+foreach ($results as $row): ?>
+    
+    <option value="<?=$row["Artist"]?>"><?=$row["Artist"]?></option>
+    <option value="<?=$row["Genre"]?>"><?=$row["Genre"]?></option>
+    <option value="<?=$row["SongTitle"]?>"><?=$row["SongTitle"]?></option>
+    <option value="<?=$row["TitleNo"]?>"><?=$row["TitleNo"]?></option>
+    <option value="<?=$row["Image"]?>"><?=$row["Image"]?></option>
+
+<?php endforeach ?>
 </form>
 </body>
 </html>
