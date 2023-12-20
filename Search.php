@@ -33,15 +33,10 @@ include_once ("connection.php");
 $stmt = $conn->prepare('SELECT * FROM tblMusic');
 $stmt->execute();
 $results = $stmt->fetchAll();
-foreach ($results as $row): ?>
-    
-    <option value="<?=$row["Artist"]?>"><?=$row["Artist"]?></option>
-    <option value="<?=$row["Genre"]?>"><?=$row["Genre"]?></option>
-    <option value="<?=$row["SongTitle"]?>"><?=$row["SongTitle"]?></option>
-    <option value="<?=$row["TitleNo"]?>"><?=$row["TitleNo"]?></option>
-    <option value="<?=$row["Image"]?>"><?=$row["Image"]?></option>
+mysql_connect("localhost","root","");
+mysql_select_db("tblmusic");
 
-<?php endforeach ?>
+
 </form>
 </body>
 </html>
