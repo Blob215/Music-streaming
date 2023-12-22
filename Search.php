@@ -4,6 +4,7 @@
     <title>Search for music</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <meta http-equip="Content-Type" content="text/html; charset=iso-8859-1">
     <style>
     .container-fluid{ background-color: #000000;
         top: 0;
