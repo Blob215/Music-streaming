@@ -4,6 +4,7 @@
     <title>Search for music</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <meta http-equip="Content-Type" content="text/html; charset=iso-8859-1">
     <style>
     .container-fluid{ background-color: #000000;
         top: 0;
@@ -30,11 +31,22 @@
 <?php
 session_start(); 
 include_once ("connection.php");
-$stmt = $conn->prepare('SELECT * FROM tblMusic');
-$stmt->execute();
-$results = $stmt->fetchAll();
-mysql_connect("localhost","root","");
-mysql_select_db("tblmusic");
+mysqli_connect("localhost","root","");
+mysqli_select_db("tblmusic", $conn);
+$res=mysqli_query("SELECT * FROM tblmusic");
+echo "<table>";
+
+while($row=mysqli_fetch_array($res))
+{
+echo "<tr>";
+echo "<td>";?><img src="<?php echo $row["Image"]; ?>" height="100" width ="100"><?php echo "</td>";
+echo "<td>"; echo $row["SongTitle"]; echo "</td>";
+
+
+}
+echo "</table>";
+?>
+
 
 
 </form>
