@@ -25,7 +25,6 @@
     </nav>
     <br>
 <form action='addmusicsql.php' method='POST' enctype="multipart/form-data">
-    AlbumTitle:<input type="text" name="albumtitle"><br>
     Artist:<input type="text" name="artist"><br>
     Genre:<input type="text" name="genre"><br>
     SongTitle:<input type="text" name="songtitle"><br>

@@ -1,5 +1,5 @@
 <?php
-try {
+
 include_once("connection.php");
 
 
@@ -26,33 +26,28 @@ Image VARCHAR(255) NOT NULL)");
 $stmt->execute();
 $stmt->closeCursor(); 
 
-$stmt = $conn->prepare("DROP TABLE IF EXISTS TblLibrary
+$stmt = $conn->prepare("DROP TABLE IF EXISTS TblLibrary;
+CREATE TABLE tblLibrary
 (UserID INT(7) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 Artist VARCHAR(50) NOT NULL,
 Genre VARCHAR(50) NOT NULL,
 SongTitle VARCHAR(20) NOT NULL,
-Image VARCHAR(255)");
+Image VARCHAR(255))");
 $stmt->execute();
 $stmt->closeCursor();
 
 $stmt = $conn->prepare("DROP TABLE IF EXISTS tblPreferences;
 CREATE TABLE tblPreferences
-(PreferenceID INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-UserID INT(6) NOT NULL,
-Genre VARCHAR(50) NOT NULL");
+(UserID INT(6) NOT NULL,
+Genre VARCHAR(50) NOT NULL,
+PRIMARY KEY(UserID, Genre))");
 $stmt->execute();
 $stmt->closeCursor();
 
 $stmt = $conn->prepare("DROP TABLE IF EXISTS tblGenres;
 CREATE TABLE TblGenres
-(Genre VARCHAR(20))");
+(Genre VARCHAR(20) PRIMARY KEY)");
 $stmt->execute();
 $stmt->closeCursor();
 
-}
-catch(PDOException $e)
-{
-    echo $sql . "<br>" . $e->getMessage();
-}
-$conn=Null;
 ?>
