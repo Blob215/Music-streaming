@@ -26,17 +26,38 @@
 <form action="addmusic.php" method="GET">
 <input id="search" type="text" placeholder="Type here">
 <input id="submit" type="submit" value="Search">
-
+<br>
 <?php
-session_start(); 
-include_once ("connection.php");
-$stmt = $conn->prepare('SELECT * FROM tblMusic');
-$stmt->execute();
-$results = $stmt->fetchAll();
-mysql_connect("localhost","root","");
-mysql_select_db("tblmusic");
+include_once "connection.php";
+$sql=$conn->prepare("SELECT * FROM Tblmusic");
+$sql->execute();
+
+/* echo "<table>
+<tr>
+<th>Artist</th>
+<th>SongTitle</th>
+<th>Image</th>
+</tr>
+";
 
 
+ while ($row = $sql->fetch(PDO::FETCH_ASSOC))
+    {
+        echo("<tr><td>".$row["Artist"].'</td><td> '.$row["SongTitle"]."</td><td> <img src=images/".$row["Image"]."></td></tr>");
+    }
+echo "</table>";
+ */
+while ($row = $sql->fetch(PDO::FETCH_ASSOC))
+{
+    echo ($row["Artist"]);
+    echo "<br />";
+    echo ($row["SongTitle"]);
+    echo "<br />";
+    echo("<img src=images/".$row["Image"].">");
+    echo "<br />";
+}
+
+?>
 </form>
 </body>
 </html>
