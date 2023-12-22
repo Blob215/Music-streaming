@@ -46,7 +46,7 @@ $stmt->closeCursor();
 
 $stmt = $conn->prepare("DROP TABLE IF EXISTS tblGenres;
 CREATE TABLE TblGenres
-(Genre VARCHAR(20))");
+(Genre VARCHAR(20) PRIMARY KEY)");
 $stmt->execute();
 $stmt->closeCursor();
 ?>
