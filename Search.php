@@ -29,12 +29,6 @@
 <input id="submit" type="submit" value="Search">
 
 <?php
-session_start(); 
-include_once ("connection.php");
-mysqli_connect("localhost","root","");
-mysqli_select_db("tblmusic", $conn);
-$res=mysqli_query("SELECT * FROM tblmusic");
-echo "<table>";
 
 while($row=mysqli_fetch_array($res))
 {
