@@ -26,6 +26,17 @@
 <form action="addmusic.php" method="GET">
 <input id="search" type="text" placeholder="Type here">
 <input id="submit" type="submit" value="Search">
+
+<?php
+session_start(); 
+include_once ("connection.php");
+$stmt = $conn->prepare('SELECT * FROM tblMusic');
+$stmt->execute();
+$results = $stmt->fetchAll();
+mysql_connect("localhost","root","");
+mysql_select_db("tblmusic");
+
+
 </form>
 </body>
 </html>

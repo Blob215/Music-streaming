@@ -26,7 +26,7 @@ Image VARCHAR(255) NOT NULL)");
 $stmt->execute();
 $stmt->closeCursor(); 
 
-$stmt = $conn->prepare("DROP TABLE IF EXISTS TblLibrary;
+$stmt = $conn->prepare("DROP TABLE IF EXISTS tblLibrary;
 CREATE TABLE tblLibrary
 (UserID INT(7) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 Artist VARCHAR(50) NOT NULL,
@@ -38,9 +38,9 @@ $stmt->closeCursor();
 
 $stmt = $conn->prepare("DROP TABLE IF EXISTS tblPreferences;
 CREATE TABLE tblPreferences
-(UserID INT(6) NOT NULL,
-Genre VARCHAR(50) NOT NULL,
-PRIMARY KEY(UserID, Genre))");
+(PreferenceID INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+UserID INT(6) NOT NULL,
+Genre VARCHAR(50) NOT NULL)");
 $stmt->execute();
 $stmt->closeCursor();
 
@@ -49,5 +49,4 @@ CREATE TABLE TblGenres
 (Genre VARCHAR(20) PRIMARY KEY)");
 $stmt->execute();
 $stmt->closeCursor();
-
 ?>
