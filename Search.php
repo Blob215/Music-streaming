@@ -54,7 +54,7 @@ while ($row = $sql->fetch(PDO::FETCH_ASSOC))
     echo "<br />";
     echo ($row["SongTitle"]);
     echo "<br />";
-    echo ("</td><td> <img width = "200" length="200" src=images/".$row["Image"]."></td></tr>");
+    echo ("<img width = "200" length="200" src=images/".$row["Image"].">");
     echo "<br />";
 }
 
