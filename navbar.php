@@ -1,7 +1,4 @@
 <html>
-<?php
-    session_start();
-    ?>
 <!-- sets the width to the length of a device-->
 <meta name="metaport" content="width=device-width, initial-scale=1">
 <!-- Link to the stylesheets and bootstrap-->

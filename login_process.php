@@ -21,13 +21,13 @@ if($results){
             // if password is correct, user is sent to homepage or the page they were on
             if(password_verify($attempt,$hashed)){
                 if (!isset($_SESSION['backURL'])){
-                    $backURL= "Search.php";
+                    $backURL= "Library.php";
                 }else{
                     $backURL=$_SESSION['backURL'];
                 }
                 unset($_SESSION['backURL']);
                 // session variables are set
-                $_SESSION['UserID']=$row["userID"];
+                $_SESSION['UserID']=$row["UserID"];
                 header('Location: ' . $backURL);
             }else{
                 $_SESSION['Message']="Incorrect password, please try again";
@@ -37,7 +37,7 @@ if($results){
 }
 
 else{
-// if the email does not exist, the user is notified
+// if the username does not exist, the user is notified
     $_SESSION['Message']="User does not exist, please try again";
     header('Location: Search.php');
 }

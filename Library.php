@@ -1,6 +1,6 @@
 <?php
 session_start(); 
-if (!isset($_SESSION['loggedinID']))
+if (!isset($_SESSION['UserID']))
 {   
     $_SESSION['backURL'] = $_SERVER['REQUEST_URI'];
     header("Location:login.php");
@@ -17,7 +17,7 @@ if (!isset($_SESSION['loggedinID']))
     include_once('connection.php');
 ?>
 <?php
-    $stmt=$conn->prepare("SELECT * FROM tblMusic WHERE userID = :userID");
+    $stmt=$conn->prepare("SELECT * FROM tblLibrary WHERE UserID = :userID");
     $stmt->execute();
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
 {

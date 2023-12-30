@@ -28,7 +28,7 @@ $stmt->closeCursor();
 
 $stmt = $conn->prepare("DROP TABLE IF EXISTS tblLibrary;
 CREATE TABLE tblLibrary
-(UserID INT(7) PRIMARY KEY,
+(UserID INT(7),
 Artist VARCHAR(50) NOT NULL,
 Genre VARCHAR(50) NOT NULL,
 SongTitle VARCHAR(20) NOT NULL,
