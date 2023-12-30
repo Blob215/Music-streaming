@@ -34,13 +34,10 @@
     </nav>
     <br>
 <form action="login_process.php" method= "POST"  class="About">
- User name:<input type="text" name="Username"><br>
- Password:<input type="password" name="Password"><br>
+ User name:<input type="text" name="Username" placeholder="Username"><br>
+ Password:<input type="password" name="Pword" placeholder="Password"><br>
   <input type="submit" value="Login">
 
-  <div style="position: absolute; bottom: 5px; background-color: black">
-    <li><a href="menu.php">Go back to homepage</a></li>
-    </div>
 </form>
 </body>
 </html>

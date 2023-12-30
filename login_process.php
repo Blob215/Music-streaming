@@ -16,12 +16,12 @@ if($results){
     $stmt->execute();
     // iterates through the rows of the results from the statement
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){ 
-        $hashed = $row['Password']; 
+        $hashed = $row['password']; 
         $attempt = $_POST['Pword'];
             // if password is correct, user is sent to homepage or the page they were on
             if(password_verify($attempt,$hashed)){
                 if (!isset($_SESSION['backURL'])){
-                    $backURL= "menu.php";
+                    $backURL= "Search.php";
                 }else{
                     $backURL=$_SESSION['backURL'];
                 }
@@ -39,6 +39,6 @@ if($results){
 else{
 // if the email does not exist, the user is notified
     $_SESSION['Message']="User does not exist, please try again";
-    header('Location: login.php');
+    header('Location: Search.php');
 }
 ?>  

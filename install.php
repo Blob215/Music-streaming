@@ -9,7 +9,7 @@ CREATE TABLE tblUsers
 Username VARCHAR(20) NOT NULL,
 Surname VARCHAR(20) NOT NULL,
 Forename VARCHAR(20) NOT NULL,
-Password VARCHAR(30) NOT NULL,
+password VARCHAR(300) NOT NULL,
 Emailaddress VARCHAR(50) NOT NULL,
 Phonenumber INT(11) NOT NULL,
 Role TINYINT(1))");
