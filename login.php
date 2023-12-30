@@ -19,6 +19,16 @@
     <div class = "container-fluid">
         <ul class="nav navbar-nav">
             <li><h1 class="login">Login</h1></li>
+            <p style="color:red;">
+                                <?php
+                                // displays an error message if necessary
+                                session_start(); 
+                                if (isset($_SESSION['Message'])){
+                                    echo($_SESSION['Message']);
+                                    unset($_SESSION['Message']);
+                                } 
+                                ?>
+                            </p>
         </ul>
     </div>
     </nav>

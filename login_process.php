@@ -1,23 +1,44 @@
-<?php
-session_start();
+<?php 
+session_start(); 
 include_once ("connection.php");
 
-$stmt = $conn->prepare("SELECT * FROM TblUsers WHERE Username =:username;");
-$stmt->bindParam(':username', $_POST['Username']);
+// sanitise  $_POST array
+array_map("htmlspecialchars", $_POST);
 
+// selects all columns from the user's row
+$stmt = $conn->prepare("SELECT * FROM tblusers WHERE Username =:username ;" );
+$stmt->bindParam(':username', $_POST['Username']);
 $stmt->execute();
-while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
-{
-    if ($_POST['password']==$row['Password']){
-        $_SESSION['name']=$row["Username"];
-        echo("<script> document.location.href='http://localhost/Library%20System/menu.php';
-        </script>");
+$results = $stmt->fetchAll();
+
+// checks if there are any results from the executed statement
+if($results){
+    $stmt->execute();
+    // iterates through the rows of the results from the statement
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){ 
+        $hashed = $row['Password']; 
+        $attempt = $_POST['Pword'];
+            // if password is correct, user is sent to homepage or the page they were on
+            if(password_verify($attempt,$hashed)){
+                if (!isset($_SESSION['backURL'])){
+                    $backURL= "menu.php";
+                }else{
+                    $backURL=$_SESSION['backURL'];
+                }
+                unset($_SESSION['backURL']);
+                // session variables are set
+                $_SESSION['UserID']=$row["userID"];
+                header('Location: ' . $backURL);
+            }else{
+                $_SESSION['Message']="Incorrect password, please try again";
+                header('Location: login.php');
+            }   
     }
-    else{
-        echo("<script> document.location.href='http://localhost/Library%20System/login.php';
-        </script>");
 }
+
+else{
+// if the email does not exist, the user is notified
+    $_SESSION['Message']="User does not exist, please try again";
+    header('Location: login.php');
 }
-$conn=null;
-;
-?>
+?>  
