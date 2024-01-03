@@ -39,41 +39,22 @@ if (!isset($_SESSION['UserID']))
 <?php
 include_once "connection.php";
 $stmt=$conn->prepare("SELECT * FROM Tblmusic");
-$sql=$conn->prepare("SELECT * FROM TblUsers");
-$sql->bindParam(':userID', $_SESSION['UserID'], PDO::PARAM_INT);
 $stmt->execute();
-$sql->execute();
-$libraryData = $sql->fetch(PDO::FETCH_ASSOC);
+while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
 
-/* echo "<table>
-<tr>
-<th>Artist</th>
-<th>SongTitle</th>
-<th>Image</th>
-</tr>
-";
+        {//uses a hidden input which contains the ID of the tuck selected
 
+            echo'<form action="addtolibrary.php" method="post">';
+            echo ("<img width='200' length='200' src=images/".$row["Image"].">");
+            echo "<br />";
+            echo $row["Artist"].' '.$row["SongTitle"]. "<br />" .
+ 
 
- while ($row = $sql->fetch(PDO::FETCH_ASSOC))
-    {
-        echo("<tr><td>".$row["Artist"].'</td><td> '.$row["SongTitle"]."</td><td> <img src=images/".$row["Image"]."></td></tr>");
-    }
-echo "</table>";
- */
-while ($row = $sql->fetch(PDO::FETCH_ASSOC))
-{
-    echo ($row["Artist"]);
-    echo "<br />";
-    echo ($row["SongTitle"]);
-    echo "<br />";
-    echo ("<img width='200' length='200' src=images/".$row["Image"].">");
-    echo "<br />";
-    echo ('<a class="link" href="addtolibrary.php?SongTitle=' . $libraryData["SongTitle"] . '">X</a>');
-}
+            "<input type='submit' value='Add to library'><input type='hidden' name='MusicID'
+            value=".$row['MusicID']."><br></form>";
 
-
+        }
 ?>
 </form>
 </body>
 </html>
-    

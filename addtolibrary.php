@@ -1,14 +1,20 @@
 <?php
+
 include_once("connection.php");
+
 session_start();
+
 array_map("htmlspecialchars", $_POST);
 
-//changes the userID to the piece of music being added to library
-$stmt = $conn->prepare("UPDATE tblLibrary SET UserID = :userID WHERE SongTitle = :songtitle");
-$stmt->bindParam(':songtitle', $_GET['SongTitle'], PDO::PARAM_INT);
-$stmt->bindParam(':userID', $_SESSION['UserID'], PDO::PARAM_INT);
+print_r($_POST);
 
-$stmt->execute();
+//changes the userID to the piece of music being added to library
+
+$stmt = $conn->prepare("INSERT INTO  tblLibrary (UserID, MusicID) VALUES (:userID,:musicID)");
+
+$stmt->bindParam(':musicID', $_POST['MusicID'], PDO::PARAM_INT);
+
+$stmt->bindParam(':userID', $_SESSION['UserID'], PDO::PARAM_INT);
 
 $stmt->execute();
 

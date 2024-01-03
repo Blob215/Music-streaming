@@ -18,7 +18,8 @@ $stmt->closeCursor();
 
 $stmt = $conn->prepare("DROP TABLE IF EXISTS TblMusic;
 CREATE TABLE tblMusic
-(Artist VARCHAR(50) NOT NULL,
+(MusicID INT(7) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+Artist VARCHAR(50) NOT NULL,
 Genre VARCHAR(50) NOT NULL,
 SongTitle VARCHAR(20) NOT NULL,
 TitleNo INT(1) NOT NULL,
@@ -28,11 +29,8 @@ $stmt->closeCursor();
 
 $stmt = $conn->prepare("DROP TABLE IF EXISTS tblLibrary;
 CREATE TABLE tblLibrary
-(UserID INT(7),
-Artist VARCHAR(50) NOT NULL,
-Genre VARCHAR(50) NOT NULL,
-SongTitle VARCHAR(20) NOT NULL,
-Image VARCHAR(255))");
+(MusicID INT(7) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+UserID INT(7))");
 $stmt->execute();
 $stmt->closeCursor();
 
