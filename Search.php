@@ -38,8 +38,12 @@ if (!isset($_SESSION['UserID']))
 <br>
 <?php
 include_once "connection.php";
-$sql=$conn->prepare("SELECT * FROM Tblmusic");
+$stmt=$conn->prepare("SELECT * FROM Tblmusic");
+$sql=$conn->prepare("SELECT * FROM TblUsers");
+$sql->bindParam(':userID', $_SESSION['UserID'], PDO::PARAM_INT);
+$stmt->execute();
 $sql->execute();
+$libraryData = $sql->fetch(PDO::FETCH_ASSOC);
 
 /* echo "<table>
 <tr>
@@ -64,7 +68,9 @@ while ($row = $sql->fetch(PDO::FETCH_ASSOC))
     echo "<br />";
     echo ("<img width='200' length='200' src=images/".$row["Image"].">");
     echo "<br />";
+    echo ('<a class="link" href="addtolibrary.php?SongTitle=' . $libraryData["SongTitle"] . '">X</a>');
 }
+
 
 ?>
 </form>
