@@ -5,7 +5,7 @@ include_once("connection.php");
 
 $stmt = $conn->prepare("DROP TABLE IF EXISTS tblUsers;
 CREATE TABLE tblUsers 
-(UserID INT(7) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+(UserID INT(7) AUTO_INCREMENT PRIMARY KEY,
 Username VARCHAR(20) NOT NULL,
 Surname VARCHAR(20) NOT NULL,
 Forename VARCHAR(20) NOT NULL,
@@ -18,7 +18,7 @@ $stmt->closeCursor();
 
 $stmt = $conn->prepare("DROP TABLE IF EXISTS TblMusic;
 CREATE TABLE tblMusic
-(MusicID INT(7) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+(MusicID INT(7) AUTO_INCREMENT PRIMARY KEY,
 Artist VARCHAR(50) NOT NULL,
 Genre VARCHAR(50) NOT NULL,
 SongTitle VARCHAR(20) NOT NULL,
@@ -28,9 +28,10 @@ $stmt->execute();
 $stmt->closeCursor(); 
 
 $stmt = $conn->prepare("DROP TABLE IF EXISTS tblLibrary;
-CREATE TABLE tblLibrary
-(MusicID INT(7) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-UserID INT(7))");
+CREATE TABLE tblLibrary(
+MusicID INT(7),
+UserID INT(7),
+PRIMARY KEY(MusicID,UserID))");
 $stmt->execute();
 $stmt->closeCursor();
 

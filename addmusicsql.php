@@ -7,16 +7,14 @@ print_r($_FILES);
     include_once('connection.php');
 	  array_map("htmlspecialchars", $_POST);
 
-    $stmt=$conn->prepare("INSERT INTO tblmusic(MusicID, Artist,Genre,SongTitle,TitleNo,Image)
-    VAlUES(:musicID,:artist,:genre,:songtitle,:titleno,:Pic)");
+    $stmt=$conn->prepare("INSERT INTO tblmusic(Artist,Genre,SongTitle,TitleNo,Image)
+    VAlUES(:artist,:genre,:songtitle,:titleno,:Pic)");
 
-    $stmt->bindParam(':musicID', $_POST["MusicID"]);
     $stmt->bindParam(':artist',$_POST["artist"]);
     $stmt->bindParam(':genre',$_POST["genre"]);
     $stmt->bindParam(':songtitle',$_POST["songtitle"]);
     $stmt->bindParam(':titleno',$_POST["titleno"]);
     $stmt->bindParam(':Pic', $_FILES["piccy"]["name"]);
-
     $stmt->execute();
     $target_dir = "images/";
     print_r($_FILES);

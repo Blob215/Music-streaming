@@ -31,10 +31,7 @@ if (!isset($_SESSION['UserID']))
     </div>
     </nav>
     <br>
-<!-- Search bar -->
-<form action="addmusic.php" method="GET">
-<input id="search" type="text" placeholder="Type here">
-<input id="submit" type="submit" value="Search">
+
 <br>
 <?php
 include_once "connection.php";
