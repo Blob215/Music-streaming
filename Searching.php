@@ -2,7 +2,7 @@
 
 $connection = mysqli_connect("localhost","root","");
 
-mysqli_select_db("blog1")or die(mysql_error());
+mysqli_select_db("blog1")or die(mysqli_error());
 
 $safe_value = mysqli_real_escape_string($_POST['search']);
 

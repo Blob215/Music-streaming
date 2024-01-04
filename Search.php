@@ -25,8 +25,13 @@ if (!isset($_SESSION['UserID']))
 <body>
 <?php
     require 'navbar.php';
+    
 ?>
 <br>
+<form action="Searching.php" method="GET">
+    <input type="text" placeholder="Search for Music" name="key">
+    <input type="submit" value="Submit" name="submit">
+</form>
 <?php
 include_once "connection.php";
 $stmt=$conn->prepare("SELECT * FROM Tblmusic");
