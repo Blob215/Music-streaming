@@ -17,7 +17,8 @@ if (!isset($_SESSION['UserID']))
     include_once('connection.php');
 ?>
 <?php
-    $stmt=$conn->prepare("SELECT MusicID FROM tblLibrary WHERE UserID");
+    $stmt=$conn->prepare("SELECT MusicID FROM tblLibrary WHERE UserID = :userID");
+    $stmt->bindParam(':userID', $_SESSION['UserID'], PDO::PARAM_INT);
     $stmt->execute();
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
 {
