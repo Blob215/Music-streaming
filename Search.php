@@ -23,15 +23,9 @@ if (!isset($_SESSION['UserID']))
     </style>
 </head>
 <body>
-<nav class="navbar navbar-inverse" style="background-color:#000000; class='font-family: 'Times New Roman', Times, serif;">
-    <div class = "container-fluid">
-        <ul class="nav navbar-nav">
-            <li><h1 class="login">Search for music</h1></li>
-        </ul>
-    </div>
-    </nav>
-    <br>
-
+<?php
+    require 'navbar.php';
+?>
 <br>
 <?php
 include_once "connection.php";
