@@ -29,26 +29,27 @@ if (!isset($_SESSION['UserID']))
 ?>
 <br>
 <form action="searchsql.php" method="post">
-    <input type="text" placeholder="Search for Music" name="SongTitle">
+    <input type="text" placeholder="Search for song titles" name="SongTitle">
     <button type="submit" name="save" class="btn btn-primary">Search</button>
 </form>
 <?php
 include_once "connection.php";
 $stmt=$conn->prepare("SELECT * FROM Tblmusic");
 $stmt->execute();
-// while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
+while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
 
-//         {
-//             echo'<form action="addtolibrary.php" method="post">';
-//             echo ("<img width='200' length='200' src=images/".$row["Image"].">");
-//             echo "<br />";
-//             echo $row["Artist"].' '.$row["SongTitle"]. "<br />" .
+        {
+            echo'<form action="addtolibrary.php" method="post">';
+            echo ("<img width='200' length='200' src=images/".$row["Image"].">");
+            echo "<br />";
+            echo $row["SongTitle"].  "<br />" .' By '.$row["Artist"]. "<br />" .
  
 
-//             "<input type='submit' value='Add to library'><input type='hidden' name='MusicID'
-//             value=".$row['MusicID']."><br></form>";
+            "<input type='submit' value='Add to library'><input type='hidden' name='MusicID'
+            value=".$row['MusicID']."><br></form>";
 
-//         }
+        }
+$conn=null;
 ?>
 </form>
 </body>

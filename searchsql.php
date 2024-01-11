@@ -1,41 +1,31 @@
 <?php
-include_once 'connection.php';
-if(count($_POST)>0) {
-$SongTitle=$_POST['SongTitle'];
-$result = mysqli_query($conn,"SELECT * FROM TblMusic where SongTitle='$SongTitle' ");
-}
+    require 'navbar.php';
+    echo '<br>';
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-<title> Retrive data</title>
-<style>
-table, th, td {
-    border: 1px solid black;
-}
-</style>
-</head>
-<body>
-<table>
-<tr>
-<td>SongTitle</td>
-<td>Artist</td>
-<td>Genre</td>
+<?php
+include_once("connection.php");
+array_map("htmlspecialchars",$_POST);
+$stmt=$conn->prepare("SELECT * FROM tblmusic WHERE SongTitle=:title");
+$stmt->bindParam(':title',$_POST["SongTitle"]);
+$stmt->execute();
+?>
+<form action="searchsql.php" method="post">
+    <input type="text" placeholder="Search for song titles" name="SongTitle">
+    <button type="submit" name="save" class="btn btn-primary">Search</button>
+</form>
+<?php
+while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
 
-</tr>
-<?php
-$i=0;
-while($row = mysqli_fetch_array($result)) {
+        {
+            echo'<form action="addtolibrary.php" method="post">';
+            echo ("<img width='200' length='200' src=images/".$row["Image"].">");
+            echo "<br />";
+            echo $row["SongTitle"].  "<br />" .' By '.$row["Artist"]. "<br />" .
+ 
+
+            "<input type='submit' value='Add to library'><input type='hidden' name='MusicID'
+            value=".$row['MusicID']."><br></form>";
+
+        }
+$conn=null;
 ?>
-<tr>
-<td><?php echo $row["SongTitle"]; ?></td>
-<td><?php echo $row["Artist"]; ?></td>
-<td><?php echo $row["Genre"]; ?></td>
-</tr>
-<?php
-$i++;
-}
-?>
-</table>
-</body>
-</html>
