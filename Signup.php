@@ -25,7 +25,6 @@
     </nav>
     <br>
 <form class="About" action='addusers.php' method="POST">
-    UserID:<input type="text" name="userid"><br>
     Forename:<input type="text" name="forename"><br>
     Surname:<input type="text" name="surname"><br>
     Username:<input type="text" name="username"><br>

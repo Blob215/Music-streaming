@@ -6,12 +6,11 @@ include_once("connection.php");
 array_map("htmlspecialchars",$_POST);
 /*Insert into the database*/
 $stmt=$conn->prepare("INSERT INTO 
-tblusers (UserID,Username,Surname,Forename,Password,Emailaddress,Phonenumber,Role) 
-VALUES(:UserID,:username,:surname,:forename,:password,:emailaddress,:phonenumber,0)");
+tblusers (Username,Surname,Forename,Password,Emailaddress,Phonenumber,Role) 
+VALUES(:username,:surname,:forename,:password,:emailaddress,:phonenumber,0)");
 
 $hashed_password = password_hash($_POST["passwd"], PASSWORD_DEFAULT);
 
-$stmt->bindParam(':UserID',$_POST["userid"]);
 $stmt->bindParam(':surname',$_POST["surname"]);
 $stmt->bindParam(':forename',$_POST["forename"]);
 $stmt->bindParam(':username',$_POST["username"]);

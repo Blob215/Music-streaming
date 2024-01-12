@@ -4,6 +4,7 @@ include_once("connection.php");
 session_start();
 if (isset($_POST['submit']))
 print_r($_POST);
+print_r($_FILES);
 {
 
 $stmt=$conn->prepare("DELETE FROM TblPreferences WHERE UserID=:userid");
@@ -15,8 +16,8 @@ $stmt->execute();
 
     while($i<sizeof($chkbox)) {
 
-        $stmt = $conn->prepare("INSERT INTO TblPrefences (UserID, Preference) VALUES(:userid,:preference)");
-        $stmt->bindParam(':userid', $_SESSION["userid"]);
+        $stmt = $conn->prepare("INSERT INTO TblPreferences (UserID, PreferenceID) VALUES(:userid,:preference)");
+        $stmt->bindParam(':userID', $_SESSION['UserID'], PDO::PARAM_INT);
         $stmt->bindParam(':preference',$chkbox[$i]);
         $stmt->execute();
 
