@@ -24,6 +24,12 @@ if (!isset($_SESSION['UserID']))
     $stmt->execute();
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
 {
+    echo "<br />";
+    
+    echo ("<img width='200' length='200' src=images/".$row["img"].">");
+
+    echo "<br />";
+
     echo ($row["art"]);
 
     echo "<br />";
@@ -32,9 +38,7 @@ if (!isset($_SESSION['UserID']))
 
     echo "<br />";
 
-    echo ("<img width='200' length='200' src=images/".$row["img"].">");
 
-    echo "<br />";
 }
 ?>
 

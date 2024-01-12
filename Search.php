@@ -28,9 +28,9 @@ if (!isset($_SESSION['UserID']))
     
 ?>
 <br>
-<form action="Searching.php" method="GET">
-    <input type="text" placeholder="Search for Music" name="key">
-    <input type="submit" value="Submit" name="submit">
+<form action="searchsql.php" method="post">
+    <input type="text" placeholder="Search for song titles" name="SongTitle">
+    <button type="submit" name="save" class="btn btn-primary">Search</button>
 </form>
 <?php
 include_once "connection.php";
@@ -38,18 +38,18 @@ $stmt=$conn->prepare("SELECT * FROM Tblmusic");
 $stmt->execute();
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
 
-        {//uses a hidden input which contains the ID of the tuck selected
-
+        {
             echo'<form action="addtolibrary.php" method="post">';
             echo ("<img width='200' length='200' src=images/".$row["Image"].">");
             echo "<br />";
-            echo $row["Artist"].' '.$row["SongTitle"]. "<br />" .
+            echo $row["SongTitle"].  "<br />" .' By '.$row["Artist"]. "<br />" .
  
 
             "<input type='submit' value='Add to library'><input type='hidden' name='MusicID'
             value=".$row['MusicID']."><br></form>";
 
         }
+$conn=null;
 ?>
 </form>
 </body>
