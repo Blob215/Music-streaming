@@ -37,9 +37,9 @@ $stmt->closeCursor();
 
 $stmt = $conn->prepare("DROP TABLE IF EXISTS tblPreferences;
 CREATE TABLE tblPreferences
-(PreferenceID INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-UserID INT(6) NOT NULL,
-Genre VARCHAR(50) NOT NULL)");
+(UserID INT(6) NOT NULL,
+Genre VARCHAR(50) NOT NULL,
+PRIMARY KEY(UserID,Genre))");
 $stmt->execute();
 $stmt->closeCursor();
 
