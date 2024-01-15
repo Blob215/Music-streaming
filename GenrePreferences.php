@@ -34,10 +34,12 @@ while ($row =$stmt->fetch(PDO::FETCH_ASSOC))
     ?>
     " type="checkbox" style='padding: 10px;' value="<?php echo $row['Genre'];?>" 
      >
-    <label for="<?php echo $row['Genre']; ?>"> <?php echo $row['Genre'];?><br></label>
-    </td></tr>
-    <input type='submit' value='Confirm choice'><input type='hidden' name='Genre'
-    value=".$row['Genre']."><br></form>
+    <label for="<?php echo $row['Genre']; ?>"> <?php echo $row['Genre']; . "<br />"
+ 
+
+    "<input type='submit' value='Add to preferences'><input type='hidden' name='Genre'
+    value=".$row['Genre']."><br></form>"; ?>
+
     <?php
 }
 ?>

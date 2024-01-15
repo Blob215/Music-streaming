@@ -16,7 +16,7 @@ $stmt->execute();
 
     while($i<sizeof($chkbox)) {
 
-        $stmt = $conn->prepare("INSERT INTO TblPreferences (UserID, PreferenceID) VALUES(:userid,:preference)");
+        $stmt = $conn->prepare("INSERT INTO TblPreferences (UserID, Genre) VALUES(:userid,:preference)");
         $stmt->bindParam(':userID', $_SESSION['UserID'], PDO::PARAM_INT);
         $stmt->bindParam(':preference',$chkbox[$i]);
         $stmt->execute();
