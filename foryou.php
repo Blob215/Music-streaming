@@ -17,32 +17,23 @@ if (!isset($_SESSION['UserID']))
     include_once('connection.php');
 ?>
 <?php
-    $stmt=$conn->prepare("SELECT  tblmusic.artist as art, tblmusic.image as img, tblmusic.SongTitle as st FROM tblPreferences
+    $stmt=$conn->prepare("SELECT  tblmusic.artist as art, tblmusic.image as img, tblmusic.SongTitle as st, tblmusic.MusicID as id FROM tblPreferences
     INNER JOIN tblmusic on tblmusic.Genre = tblPreferences.Genre
     WHERE tblPreferences.UserID = :userID");
     $stmt->bindParam(':userID', $_SESSION['UserID'], PDO::PARAM_INT);
     $stmt->execute();
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
     {
-    
-    echo'<form action="addtolibrary.php" method="post">';
+        echo "<br />";
+        echo'<form action="addtolibrary.php" method="post">';
+        echo ("<img width='200' length='200' src=images/".$row["img"].">");
+        echo "<br />";
+        echo $row["st"].  "<br />" .' By '.$row["art"]. "<br />" .
 
-    echo "<br />";
 
-    echo ("<img width='200' length='200' src=images/".$row["img"].">");
+        "<input type='submit' value='Add to library'><input type='hidden' name='MusicID'
+        value=".$row['id']."><br></form>";
 
-    echo "<br />";
-
-    echo ($row["art"]);
-
-    echo "<br />";
-
-    echo ($row["st"]);
-
-    echo "<br />";
-    
-    "<input type='submit' value='Add to library'><input type='hidden' name='MusicID'
-    value=".$row['MusicID']."><br></form>";
 }
 ?>
 
