@@ -26,7 +26,7 @@ header('Location: GenrePreferences.php');
 }
 catch(Exception $e)
 {
-    header('Location: GenrePreferences.php');
+    header('Location: GenrePreferences.php');p
 }
 ?>
 

@@ -28,6 +28,7 @@ if($results){
                 unset($_SESSION['backURL']);
                 // session variables are set
                 $_SESSION['UserID']=$row["UserID"];
+                $_SESSION['Role']=$row["Role"];
                 header('Location: ' . $backURL);
             }else{
                 $_SESSION['Message']="Incorrect password, please try again";
