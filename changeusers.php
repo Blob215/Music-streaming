@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html>
+<title>Delete Users</title>
 <?php
 
 include_once("connection.php");
@@ -45,3 +48,4 @@ if ($users == 1) {
     echo('<br>No users to display');
 }
 ?>
+</html>
