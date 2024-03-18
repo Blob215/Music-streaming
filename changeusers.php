@@ -15,10 +15,14 @@ $stmt = $conn->prepare("SELECT * FROM tblUsers ORDER BY username");
 $stmt->execute();
 $userData = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    // row to fill the width of the page
-    echo('<div class="custom-row" style="height:10vh">');
-        echo ('<div class="left-content">'); // image on left of page
-            echo ('<h3>'.$userData['UserID'].'</h3>');
+if ($userData) {
+    $users = 1;
+}
+else {
+    $users = 0;
+}
+if ($users == 1) {
+    do {
         echo ('</div>');
         echo ('<div class="User-ID">');
             if ($userData['Role'] == 1) {
@@ -28,8 +32,14 @@ $userData = $stmt->fetch(PDO::FETCH_ASSOC);
                 echo ('<h3>User</h3>');
             }
         echo ('</div>');
+        echo ($userData["Username"]);
         echo ('<div class="remove">');
             echo ('<a class="link" href="removeusers.php?UserID=' . $userData["UserID"] .'">X</a>');
         echo ('</div>');
     echo('</div>');
+    } while ($userData = $stmt->fetch(PDO::FETCH_ASSOC));
+} else {
+    // error message if there are no users
+    echo('<br>No users to display');
+}
 ?>
