@@ -21,7 +21,7 @@ $stmt->bindParam(':userID', $_SESSION['UserID'], PDO::PARAM_INT);
 $stmt->execute();
 $userData = $stmt->fetch(PDO::FETCH_ASSOC);
 ?>
-<form action="details.php" method="post" class="About">
+<form action="changedetailsql.php" method="post" class="About">
 User name:<input type="text" name="Username"><br>
 Password:<input type="password" name="passwd"><br>
 Email Address:<input type="text" name="emailaddress"><br>
@@ -30,3 +30,4 @@ Phone Number:<input type="text" name="phonenumber"><br>
 
 </body>
 </html>
+XX
