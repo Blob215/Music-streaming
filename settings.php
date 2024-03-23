@@ -9,6 +9,7 @@ session_start();
 ?>
 <li><a href="addmusic.php">Adding music</a></li>
 <li><a href="GenrePreferences.php">Add to preferences</a></li>
+<li><a href="userdetails.php">Change details</a></li>
 <div style="position: absolute; bottom: 5px; background-color: black">
 <li><a href="menu.php">Go back to homepage</a></li>
 </div>

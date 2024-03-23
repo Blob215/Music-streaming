@@ -29,7 +29,7 @@
     Surname:<input type="text" name="surname"><br>
     Username:<input type="text" name="username"><br>
     Password:<input type="text" name="passwd"><br>
-    Emailaddress:<input type="text" name="emailaddress"><br>
+    Email Address:<input type="text" name="emailaddress"><br>
     Phone Number:<input type="text" name="phonenumber"><br>
     <input type="submit" value="Sign Up"><br>
 
