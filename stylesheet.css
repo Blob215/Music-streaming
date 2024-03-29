@@ -33,3 +33,16 @@
     padding-left: 150px;
     color: white;
 }
+.nav {
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    font-weight: bolder;
+    color: #ffffff;
+    height: 50px;
+    width: auto;
+    display: flex;
+    text-align: center;
+    line-height: 50px;
+    padding-right: 50px;
+    padding-left: 50px;
+  }

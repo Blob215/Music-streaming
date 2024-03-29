@@ -17,7 +17,7 @@
 <body>
 <nav class="navbar navbar-inverse" style="background-color:#000000; class='font-family: 'Times New Roman', Times, serif;">
     <div class = "container-fluid">
-        <ul class="nav navbar-nav">
+        <ul class="navbar-nav">
             <li><h1 class="login">Login</h1></li>
             <p style="color:red;">
                                 <?php

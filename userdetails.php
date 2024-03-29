@@ -28,6 +28,14 @@ Email Address:<input type="text" name="emailaddress"><br>
 Phone Number:<input type="text" name="phonenumber"><br>
 <input type='submit' value='Change details'>
 
+<p style="color:green;">
+    <?php
+    // displays a feedback message to signal the user
+    if (isset($_SESSION['Change'])){
+    echo($_SESSION['Change']);
+    unset($_SESSION['Change']);
+    } 
+    ?>
+</p>
 </body>
 </html>
-XX
