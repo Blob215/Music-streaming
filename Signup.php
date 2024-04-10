@@ -18,7 +18,7 @@
 <body>
 <nav class="navbar navbar-inverse" style="background-color:#000000; class='font-family: 'Times New Roman', Times, serif;">
     <div class = "container-fluid">
-        <ul class="nav navbar-nav">
+        <ul class="navbar-nav">
             <li><h1 class="login">Sign Up</h1></li>
         </ul>
     </div>
@@ -33,7 +33,7 @@
     Phone Number:<input type="text" name="phonenumber"><br>
     <input type="submit" value="Sign Up"><br>
 
-    <div style="position: absolute; bottom: 5px; background-color: black">
+    <div style="position: absolute; bottom: 5px; background-color: black" class="homepage">
     <li><a href="menu.php">Go back to homepage</a></li>
     </div>
 </form>

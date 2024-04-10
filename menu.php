@@ -19,19 +19,32 @@
     <div class = "container-fluid">
         <ul class="navbar-nav">
             <li><h1 class="login">Home page</h1></li>
-            <nav class="navbar navbar-inverse" style="background-color:#000000; class='font-family: 'Times New Roman', Times, serif;">
-    <div class = "container-fluid">
-        <ul class="nav">
-            <li class="nav"><a href="library.php">Library</a></li>
-             
-            <li class="nav"><a href="settings.php">Settings</a></li>
-        
-            <li class="nav"><a href="search.php">Search</a></li>
-            
-            <li class="nav"><a href="foryou.php">For you</a></li>
-        </ul>
-    </div>
+            </div>
     </nav>
+    <br>
+    <br>
+    <br>
+        <ul class="menu">
+            <li class="button"><a href="login.php">Login</a></li>
+             
+            <li class="button"><a href="Signup.php">Sign Up</a></li>
+    </ul>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+        <ul class="menu">
+            <li class="button"><a href="About.php">About</a></li>
+            
+            <li class="button"><a href="albumpreview.php">Albums</a></li>
+        </ul>
+
 
     </body>
 </html>

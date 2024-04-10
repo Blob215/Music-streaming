@@ -7,11 +7,14 @@
     include_once('connection.php');
 session_start();
 ?>
-<li><a href="addmusic.php">Adding music</a></li>
-<li><a href="GenrePreferences.php">Add to preferences</a></li>
-<li><a href="userdetails.php">Change details</a></li>
-<div style="position: absolute; bottom: 5px; background-color: black">
-<li><a href="menu.php">Go back to homepage</a></li>
+<br>
+<li><a class="settings" href="addmusic.php">Adding music</a></li>
+<br>
+<li><a class="settings" href="GenrePreferences.php">Add to preferences</a></li>
+<br>
+<li><a class="settings" href="userdetails.php">Change details</a></li>
+<br>
+<li><a class="settings" href="logout.php">Logout</a></li>
 </div>
 <?php
 

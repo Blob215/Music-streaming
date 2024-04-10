@@ -18,6 +18,7 @@ $stmt->bindParam(':password', $hashed_password);
 $stmt->bindParam(':emailaddress',$_POST["emailaddress"]);
 $stmt->bindParam('phonenumber',$_POST["phonenumber"]);
 $stmt->execute();
+header('Location: login.php');
 }
 
 catch(PDOException $e)

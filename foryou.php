@@ -11,13 +11,15 @@ if (!isset($_SESSION['UserID']))
 <head>
     <title>For you</title>
 <title>Settings</title>
-<li><a href="GenrePreferences.php">Add to preferences</a></li>
+
 </head>
 <body>
 <?php
     require 'navbar.php';
     include_once('connection.php');
 ?>
+<br>
+<a class="settings" ref="GenrePreferences.php">Add to preferences</a>
 <?php
     
     $stmt=$conn->prepare("SELECT  tblmusic.artist as art, tblmusic.image as img, tblmusic.SongTitle as st, tblmusic.MusicID as id FROM tblPreferences
