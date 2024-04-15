@@ -19,7 +19,7 @@ if (!isset($_SESSION['UserID']))
     include_once('connection.php');
 ?>
 <br>
-<a class="settings" ref="GenrePreferences.php">Add to preferences</a>
+<a class="settings" href="GenrePreferences.php">Add to preferences</a>
 <?php
     
     $stmt=$conn->prepare("SELECT  tblmusic.artist as art, tblmusic.image as img, tblmusic.SongTitle as st, tblmusic.MusicID as id FROM tblPreferences

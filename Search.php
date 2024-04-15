@@ -36,6 +36,11 @@ if (!isset($_SESSION['UserID']))
 include_once "connection.php";
 $stmt=$conn->prepare("SELECT * FROM Tblmusic");
 $stmt->execute();
+?>
+<div class='music'>
+<br>
+<br>
+<?php
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
 
         {
@@ -47,10 +52,13 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
 
             "<input type='submit' value='Add to library'><input type='hidden' name='MusicID'
             value=".$row['MusicID']."><br></form>";
+            // adds space between each album
+            echo str_repeat('&nbsp;', 15);
 
         }
 $conn=null;
 ?>
+</div>
 </form>
 </body>
 </html>

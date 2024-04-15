@@ -48,4 +48,49 @@ CREATE TABLE TblGenres
 (Genre VARCHAR(20) PRIMARY KEY)");
 $stmt->execute();
 $stmt->closeCursor();
+// 2d array of Genres
+$Genres = [
+    ['Hip hop'],
+    ['R&B'],
+    ['Jazz'],
+    ['Blues'],
+    ['Electronic'],
+    ['Rock'],
+    ['EDM'],
+    ];
+  // inputs Genre array into table row by row
+  $stmt = $conn->prepare("INSERT INTO tblGenres (Genre) VALUES (?)");
+  try {
+      $conn->beginTransaction();
+      foreach ($Genres as $row)
+      {
+          $stmt->execute($row);
+      }
+      $conn->commit();
+  }catch (Exception $e){
+      $conn->rollback();
+      throw $e;
+  }
+$users = [
+    ['2', 'Alex', 'Flanders', 'Flander212', password_hash("fLanDy21@", PASSWORD_DEFAULT), '0456654336', 'Alexflander2@gmail.com', '0'],
+    ['3', 'Rosa', 'Carlsson', 'ROSY', password_hash("Carlsssto326", PASSWORD_DEFAULT), '0478887222', 'Rosacarlsson@gmail.com', '0'],
+    ['4', 'Brian', 'Collins', 'BRAINzz', password_hash("Kesssens:;7829", PASSWORD_DEFAULT), '0455112344', 'briancollinss@gmail.com', '0'],
+    ['1', 'Julian', 'Gregory', 'j.gregory', password_hash("JiDFORever7&8*", PASSWORD_DEFAULT), '01883423234', 'JulianGregory@gmail.com', '1'],
+    ['6', 'Brandon', 'Traner', 'Blrod353', password_hash("Hii1b23oz2o3b4", PASSWORD_DEFAULT), '08566381824', 'Brandon.traner@gmail.com', '1'],
+    ['7', 'Frey', 'Simpson', 'Fryfly789', password_hash("HUI£kjbkjdi13IF", PASSWORD_DEFAULT), '04574123242', 'Freysimpson@gmail.com', '1'],
+    ['5', 'Borway', 'Gray', 'oLght629', password_hash("TpaB91", PASSWORD_DEFAULT), '04667923140', 'Gray.bray@gmail.com', '1'],
+];
+// inputs Users array into table row by row
+$stmt = $conn->prepare("INSERT INTO tblUsers (UserID, Forename, Surname, Username, password, Phonenumber, Emailaddress, Role) VALUES (?,?,?,?,?,?,?,?)");
+  try {
+      $conn->beginTransaction();
+      foreach ($users as $row)
+      {
+          $stmt->execute($row);
+      }
+      $conn->commit();
+  }catch (Exception $e){
+      $conn->rollback();
+      throw $e;
+  }
 ?>

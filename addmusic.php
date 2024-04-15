@@ -32,8 +32,8 @@
     Image:<input type="file" id="piccy" name="piccy" accept="image/*"><br>
     <input type="submit" value="Add New Music"><br>
 
-    <div style="position: absolute; bottom: 5px; background-color: black">
-    <li><a href="menu.php">Go back to homepage</a></li>
+    <div style="position: absolute; bottom: 5px; background-color: black" class="button">
+    <a href="settings.php" style="color: #ffffff">Go back to settings</a>
     </div>
 </form>
 </body>

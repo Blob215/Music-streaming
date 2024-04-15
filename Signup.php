@@ -33,8 +33,8 @@
     Phone Number:<input type="text" name="phonenumber"><br>
     <input type="submit" value="Sign Up"><br>
 
-    <div style="position: absolute; bottom: 5px; background-color: black" class="homepage">
-    <li><a href="menu.php">Go back to homepage</a></li>
+    <div style="position: absolute; bottom: 5px; background-color: black" class="button">
+    <a href="menu.php" style="color: #ffffff">Go back to homepage</a>
     </div>
 </form>
 </body>

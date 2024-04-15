@@ -22,11 +22,15 @@ $stmt->execute();
 }
 }
 $conn=null;
-header('Location: GenrePreferences.php');
+$_SESSION['Preference']="Preferences successfully changed";
+header('Location: Genre.php');
 }
 catch(Exception $e)
 {
-    header('Location: GenrePreferences.php');p
+    $_SESSION['Preference']="Preferences successfully changed";
+    header('Location: GenrePreferences.php');
 }
+
 ?>
+
 

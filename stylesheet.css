@@ -34,17 +34,18 @@
     color: white;
 }
 .nav {
-    font: bold 30px Arial;
-    text-decoration: none;
+    font: bold 30px Times;
+    text-decoration: white;
     font-weight: bolder;
     color: #ffffff;
-    height: 50px;
+    height: 100px;
     width: auto;
     display: flex;
     text-align: center;
     line-height: 50px;
-    padding-right: 50px;
-    padding-left: 50px;
+    padding-right: 138px;
+    padding-left: 100px;
+    padding-top: 10px;
   }
   .menu {
     font-family: Arial, Helvetica, sans-serif;
@@ -61,18 +62,18 @@
     padding-left: 50px;
   }
   .button {
-    font: bold 60px Arial;
-    text-decoration: none;
-    background-color: #EEEEEE;
-    color: #333333;
-    padding: 70px 200px 70px 200px;
-    border-top: 1px solid #CCCCCC;
-    border-right: 1px solid #333333;
-    border-bottom: 1px solid #333333;
-    border-left: 1px solid #CCCCCC;
-    text-align: center;
+    font: bold 25px Times;
+    text-decoration: white;
+    font-weight: bolder;
+    color: #ffffff;
+    height: 70px;
+    width: auto;
     display: flex;
-    line-height: 1px;
+    text-align: center;
+    line-height: 50px;
+    padding-right: 50px;
+    padding-left: 40px;
+    padding-top: 10px;
   }
   .settings {
     font: bold 15px Arial;
@@ -85,4 +86,16 @@
     border-bottom: 1px solid #333333;
     border-left: 1px solid #CCCCCC;
     text-align: center;
+  }
+  .music {
+    font: bold 15px Times;
+    text-decoration: white;
+    font-weight: bolder;
+    color: #000000;
+    width: auto;
+    display: inline-flex;
+    text-align: center;
+    line-height: 20px;
+    padding-left: 80px;
+    padding-top: 1px;
   }
