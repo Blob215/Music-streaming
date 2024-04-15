@@ -18,4 +18,8 @@ $stmt->bindParam(':userID', $_SESSION['UserID'], PDO::PARAM_INT);
 
 $stmt->execute();
 
+
+$_SESSION['Library']="Added to library";
+header('Location: Library.php');
+
 ?>

@@ -41,21 +41,23 @@ $stmt->execute();
 <br>
 <br>
 <?php
+$i = 0;
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
 
         {
+            echo '<div class="music">';
             echo'<form action="addtolibrary.php" method="post">';
             echo ("<img width='200' length='200' src=images/".$row["Image"].">");
             echo "<br />";
-            echo $row["SongTitle"].  "<br />" .' By '.$row["Artist"]. "<br />" .
- 
+            echo $row["SongTitle"].  "<br />" .' By '.$row["Artist"]. "<br />";
+            
 
+            echo "<br />" .
             "<input type='submit' value='Add to library'><input type='hidden' name='MusicID'
             value=".$row['MusicID']."><br></form>";
-            // adds space between each album
             echo str_repeat('&nbsp;', 15);
-
-        }
+            echo '</div>';
+            }
 $conn=null;
 ?>
 </div>

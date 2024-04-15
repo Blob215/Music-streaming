@@ -93,7 +93,7 @@
     font-weight: bolder;
     color: #000000;
     width: auto;
-    display: inline-flex;
+    display: flex;
     text-align: center;
     line-height: 20px;
     padding-left: 80px;

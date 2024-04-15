@@ -8,13 +8,16 @@
 session_start();
 ?>
 <br>
-<li><a class="settings" href="addmusic.php">Adding music</a></li>
+<a class="settings" href="addmusic.php">Adding music</a>
 <br>
-<li><a class="settings" href="GenrePreferences.php">Add to preferences</a></li>
 <br>
-<li><a class="settings" href="userdetails.php">Change details</a></li>
+<a class="settings" href="GenrePreferences.php">Add to preferences</a>
 <br>
-<li><a class="settings" href="logout.php">Logout</a></li>
+<br>
+<a class="settings" href="userdetails.php">Change details</a>
+<br>
+<br>
+<a class="settings" href="logout.php">Logout</a>
 </div>
 <?php
 
