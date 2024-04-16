@@ -96,6 +96,7 @@
     display: flex;
     text-align: center;
     line-height: 20px;
-    padding-left: 80px;
+    padding-left: 1px;
     padding-top: 1px;
+    padding: 0 10px 0 10px;
   }

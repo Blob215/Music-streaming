@@ -1,18 +1,15 @@
 <?php
 //print_r($_SESSION);
-header('Location: addmusic.php');
-
 try{
     include_once('connection.php');
 	  array_map("htmlspecialchars", $_POST);
 
-    $stmt=$conn->prepare("INSERT INTO tblmusic(Artist,Genre,SongTitle,TitleNo,Image)
-    VAlUES(:artist,:genre,:songtitle,:titleno,:Pic)");
+    $stmt=$conn->prepare("INSERT INTO tblmusic(Artist,Genre,SongTitle,Image)
+    VAlUES(:artist,:genre,:songtitle,:Pic)");
 
     $stmt->bindParam(':artist',$_POST["artist"]);
     $stmt->bindParam(':genre',$_POST["genre"]);
     $stmt->bindParam(':songtitle',$_POST["songtitle"]);
-    $stmt->bindParam(':titleno',$_POST["titleno"]);
     $stmt->bindParam(':Pic', $_FILES["piccy"]["name"]);
     $stmt->execute();
     $target_dir = "images/";
@@ -33,6 +30,8 @@ try{
         echo ". Some details are incorrect, please try again";
         header("Refresh: 5; url=addmusic.php");
     }
+    $_SESSION['Music']="Added music successfully";
+    header('Location: addmusic.php');
 
 $conn=null;
 ?>

@@ -1,3 +1,11 @@
+<?php
+session_start(); 
+if (!isset($_SESSION['UserID']))
+{   
+    $_SESSION['backURL'] = $_SERVER['REQUEST_URI'];
+    header("Location:login.php");
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,6 +23,7 @@
     </style>
 </head>
 <body>
+    
 <nav class="navbar navbar-inverse" style="background-color:#000000; class='font-family: 'Times New Roman', Times, serif;">
     <div class = "container-fluid">
         <ul class="nav navbar-nav">
@@ -23,11 +32,20 @@
     </div>
     </nav>
     <br>
+    <p style="color:green;">
+    <?php
+    // displays a feedback message to signal the user
+    if (isset($_SESSION['Music'])){
+    echo str_repeat('&nbsp;', 8);
+    echo($_SESSION['Music']);
+    unset($_SESSION['Music']);
+    } 
+    ?>
+</p>
 <form action='addmusicsql.php' method='POST' enctype="multipart/form-data">
     Artist:<input type="text" name="artist"><br>
     Genre:<input type="text" name="genre"><br>
     SongTitle:<input type="text" name="songtitle"><br>
-    TitleNo:<input type="number" name="titleno"><br>
     Image:<input type="file" id="piccy" name="piccy" accept="image/*"><br>
     <input type="submit" value="Add New Music"><br>
 

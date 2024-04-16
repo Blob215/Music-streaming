@@ -37,15 +37,26 @@ include_once "connection.php";
 $stmt=$conn->prepare("SELECT * FROM Tblmusic");
 $stmt->execute();
 ?>
-<div class='music'>
 <br>
 <br>
 <?php
-$i = 0;
+$pos = 1;
+echo("<table>");
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
 
         {
+            
             echo '<div class="music">';
+
+            if($pos==1){
+
+                echo("<tr>");
+
+            }
+            
+            echo("<td>");
+            
+
             echo'<form action="addtolibrary.php" method="post">';
             echo ("<img width='200' length='200' src=images/".$row["Image"].">");
             echo "<br />";
@@ -55,10 +66,23 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
             echo "<br />" .
             "<input type='submit' value='Add to library'><input type='hidden' name='MusicID'
             value=".$row['MusicID']."><br></form>";
-            echo str_repeat('&nbsp;', 15);
+            
+            echo("</td>");
+
+            $pos=$pos+1;
+
+            if($pos==8){
+
+                echo("</tr>");
+
+                $pos=1;
+
+            }
             echo '</div>';
+            
             }
 $conn=null;
+echo("</table>");
 ?>
 </div>
 </form>

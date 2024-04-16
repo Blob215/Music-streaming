@@ -20,6 +20,7 @@ if (!isset($_SESSION['UserID']))
 ?>
 <br>
 <a class="settings" href="GenrePreferences.php">Add to preferences</a>
+<br>
 <?php
     
     $stmt=$conn->prepare("SELECT  tblmusic.artist as art, tblmusic.image as img, tblmusic.SongTitle as st, tblmusic.MusicID as id FROM tblPreferences

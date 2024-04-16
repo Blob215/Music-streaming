@@ -57,6 +57,7 @@ $Genres = [
     ['Electronic'],
     ['Rock'],
     ['EDM'],
+    ['Pop'],
     ];
   // inputs Genre array into table row by row
   $stmt = $conn->prepare("INSERT INTO tblGenres (Genre) VALUES (?)");

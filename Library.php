@@ -9,7 +9,10 @@ if (!isset($_SESSION['UserID']))
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Library</title>
+<title>Search for music</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <meta http-equip="Content-Type" content="text/html; charset=iso-8859-1">
 </head>
 <body>
 <?php
@@ -21,7 +24,6 @@ if (!isset($_SESSION['UserID']))
     <?php
     // displays a feedback message to signal the user
     if (isset($_SESSION['Library'])){
-    echo str_repeat('&nbsp;', 8);
     echo($_SESSION['Library']);
     unset($_SESSION['Library']);
     } 
@@ -38,19 +40,46 @@ if (!isset($_SESSION['UserID']))
 <br>
 <br>
 <?php
+$pos = 1;
+echo("<table>");
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
 
         {
-            echo'<form action="addtolibrary.php" method="post">';
+            
+            echo '<div class="music">';
+
+            if($pos==1){
+
+                echo("<tr>");
+
+            }
+            
+            echo("<td>");
+            
+
             echo ("<img width='200' length='200' src=images/".$row["img"].">");
             echo "<br />";
-            echo $row["st"].  "<br />" .' By '.$row["art"]. "<br />" .
-            "<br></form>";
-            // adds space between each album
-            echo str_repeat('&nbsp;', 15);
+            echo $row["st"].  "<br />" .' By '.$row["art"]. "<br />";
+            
 
-        }
+            echo "<br />";
+            
+            echo("</td>");
+
+            $pos=$pos+1;
+
+            if($pos==8){
+
+                echo("</tr>");
+
+                $pos=1;
+
+            }
+            echo '</div>';
+            
+            }
 $conn=null;
+echo("</table>");
 ?>
 </div>
 
