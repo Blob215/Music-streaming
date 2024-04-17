@@ -46,7 +46,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
 
         {
             
-            echo '<div class="music">';
+
 
             if($pos==1){
 
@@ -55,7 +55,7 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
             }
             
             echo("<td>");
-            
+            echo '<div class="music">';
 
             echo'<form action="addtolibrary.php" method="post">';
             echo ("<img width='200' length='200' src=images/".$row["Image"].">");
@@ -66,19 +66,19 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
             echo "<br />" .
             "<input type='submit' value='Add to library'><input type='hidden' name='MusicID'
             value=".$row['MusicID']."><br></form>";
-            
+            echo '</div>';
             echo("</td>");
 
             $pos=$pos+1;
 
-            if($pos==8){
+            if($pos==6){
 
                 echo("</tr>");
 
                 $pos=1;
 
             }
-            echo '</div>';
+            
             
             }
 $conn=null;

@@ -25,9 +25,9 @@
     <br>
     <br>
         <ul class="menu">
-            <li class="button"><a href="login.php">Login</a></li>
+            <li class="index"><a href="login.php"  style="color: #ffffff">Login</a></li>
              
-            <li class="button"><a href="Signup.php">Sign Up</a></li>
+            <li class="index"><a href="Signup.php" style="color: #ffffff">Sign Up</a></li>
     </ul>
     <br>
     <br>
@@ -40,9 +40,9 @@
     <br>
     <br>
         <ul class="menu">
-            <li class="button"><a href="About.php">About</a></li>
+            <li class="index"><a href="About.php" style="color: #ffffff">About</a></li>
             
-            <li class="button"><a href="albumpreview.php">Albums</a></li>
+            <li class="index" style><a href="albumpreview.php" style="color: #ffffff">Albums</a></li>
         </ul>
 
 

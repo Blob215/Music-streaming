@@ -58,8 +58,8 @@
     justify-content: space-evenly;
     text-align: center;
     line-height: 50px;
-    padding-right: 50px;
-    padding-left: 50px;
+    padding-right: 25px;
+    padding-left: 25px;
   }
   .button {
     font: bold 25px Times;
@@ -71,8 +71,8 @@
     display: flex;
     text-align: center;
     line-height: 50px;
-    padding-right: 50px;
-    padding-left: 40px;
+    padding-right: 40px;
+    padding-left: 30px;
     padding-top: 10px;
   }
   .settings {
@@ -96,7 +96,21 @@
     display: flex;
     text-align: center;
     line-height: 20px;
-    padding-left: 1px;
+    padding-left: 50px;
     padding-top: 1px;
-    padding: 0 10px 0 10px;
+    padding-right: 95px;
+    padding-bottom: 10px;
+  }
+  .index {
+    font: bold 60px Times;
+    text-decoration: none;
+    background-color: #000000;
+    color: #333333;
+    padding: 80px 90px 80px 90px;
+    border-top: 1px solid #CCCCCC;
+    border-right: 1px solid #333333;
+    border-bottom: 1px solid #333333;
+    border-left: 1px solid #CCCCCC;
+    list-style-type: none;
+    line-height: 1px;
   }

@@ -36,17 +36,16 @@ if (!isset($_SESSION['UserID']))
     $stmt->bindParam(':userID', $_SESSION['UserID'], PDO::PARAM_INT);
     $stmt->execute();
     ?>
-    <div class='music'>
 <br>
 <br>
 <?php
 $pos = 1;
-echo("<table>");
-while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
+    echo("<table>");
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
 
         {
             
-            echo '<div class="music">';
+
 
             if($pos==1){
 
@@ -55,33 +54,35 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
             }
             
             echo("<td>");
-            
+            echo '<div class="music">';
 
+            echo'<form action="addtolibrary.php" method="post">';
             echo ("<img width='200' length='200' src=images/".$row["img"].">");
             echo "<br />";
             echo $row["st"].  "<br />" .' By '.$row["art"]. "<br />";
             
 
-            echo "<br />";
-            
+            echo "<br />" .
+            "<br></form>";
+            echo '</div>';
             echo("</td>");
 
             $pos=$pos+1;
 
-            if($pos==8){
+            if($pos==6){
 
                 echo("</tr>");
 
                 $pos=1;
 
             }
-            echo '</div>';
+            
             
             }
 $conn=null;
 echo("</table>");
 ?>
 </div>
-
+</form>
 </body>
 </html>
