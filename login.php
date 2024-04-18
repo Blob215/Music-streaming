@@ -39,5 +39,8 @@
   <input type="submit" value="Login">
 
 </form>
+<div style="position: absolute; bottom: 5px; background-color: black" class="button">
+    <a href="index.php" style="color: #ffffff">Go back to homepage</a>
+</div>
 </body>
 </html>

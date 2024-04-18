@@ -34,7 +34,7 @@
     <input type="submit" value="Sign Up"><br>
 
     <div style="position: absolute; bottom: 5px; background-color: black" class="button">
-    <a href="menu.php" style="color: #ffffff">Go back to homepage</a>
+    <a href="index.php" style="color: #ffffff">Go back to homepage</a>
     </div>
 </form>
 </body>

@@ -19,7 +19,7 @@
     <div class = "container-fluid">
         <ul class="navbar-nav">
             <li><h1 class="login">Album preview</h1></li>
-            <li class="nav">Click_<a href="menu.php" class="menu"> here </a>_to go back to the homepage</li>
+            <li class="nav">Click_<a href="index.php" class="menu"> here </a>_to go back to the homepage</li>
     </ul>
     </nav>
 <br>

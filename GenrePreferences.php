@@ -74,6 +74,6 @@ echo str_repeat('&nbsp;', 8);
 </table>
 </form>
 <div style="position: absolute; bottom: 5px; background-color: black" class="button">
-    <a href="menu.php" style="color: #ffffff">Go back to homepage</a>
+    <a href="index.php" style="color: #ffffff">Go back to homepage</a>
 </body>
 </html>

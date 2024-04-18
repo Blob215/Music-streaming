@@ -31,7 +31,7 @@
 <h7 class="about">please click the login button and enter your username and password in order to access your library. So what's the scenario<br></h4>   
 
 <div style="position: absolute; bottom: 5px; background-color: black" class="button">
-    <a href="menu.php" style="color: #ffffff">Go back to homepage</a>
+    <a href="index.php" style="color: #ffffff">Go back to homepage</a>
     </div>
 </body>
 </html>
