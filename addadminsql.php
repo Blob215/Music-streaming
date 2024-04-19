@@ -1,7 +1,5 @@
 <?php
 
-try{
-
 include_once("connection.php");
 array_map("htmlspecialchars",$_POST);
 /*Insert into the database*/
@@ -16,9 +14,5 @@ $stmt->bindParam(':password',$_POST["password"]);
 $stmt->bindParam(':emailaddress',$_POST["emailaddress"]);
 $stmt->bindParam('phonenumber',$_POST["phonenumber"]);
 $stmt->execute();
-}
-
-catch(PDOException $e)
-{
-$conn=null;
-}
+header('Location: settings.php');
+?>

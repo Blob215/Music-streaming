@@ -31,7 +31,8 @@ if ($_SESSION["Role"]==1){
     echo("<br>");
     echo("Admin Functions <br>");
     ?>
-    <li><a href="addadmin.php">Add Admins</a>
+    <li><a href="addadmin.php">Add Admins</a></li>
+    <li><a href="removeusers.php">Remove Users</a></li>
     <?php
 }
 ?>

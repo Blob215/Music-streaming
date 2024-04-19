@@ -24,13 +24,14 @@
     </div>
     </nav>
     <br>
+<!-- Text boxes for users to enter their details for sign up -->
 <form class="About" action='addusers.php' method="POST">
-    Forename:<input type="text" name="forename"><br>
-    Surname:<input type="text" name="surname"><br>
-    Username:<input type="text" name="username"><br>
-    Password:<input type="password" name="passwd"><br>
-    Email Address:<input type="text" name="emailaddress"><br>
-    Phone Number:<input type="text" name="phonenumber"><br>
+    Forename:<input type="text" name="forename" required><br>
+    Surname:<input type="text" name="surname" required><br>
+    Username:<input type="text" name="username" required><br>
+    Password:<input type="password" name="passwd" required><br>
+    Email Address:<input type="text" name="emailaddress" required><br>
+    Phone Number:<input type="text" name="phonenumber" required><br>
     <input type="submit" value="Sign Up"><br>
 
     <div style="position: absolute; bottom: 5px; background-color: black" class="button">
