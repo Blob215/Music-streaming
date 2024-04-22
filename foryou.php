@@ -22,7 +22,7 @@ if (!isset($_SESSION['UserID']))
 <a class="settings" href="GenrePreferences.php">Add to preferences</a>
 <br>
 <?php
-    
+/*Select music genres based on the UserID that chose it*/
     $stmt=$conn->prepare("SELECT  tblmusic.artist as art, tblmusic.image as img, tblmusic.SongTitle as st, tblmusic.MusicID as id FROM tblPreferences
     INNER JOIN tblmusic on tblmusic.Genre = tblPreferences.Genre
     WHERE tblPreferences.UserID = :userID");

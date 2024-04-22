@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <html>
-<title>Delete Users</title>
+<head>
+   <title>Delete users</title>
+   <link rel="stylesheet" type="text/css" href="stylesheet.css">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+   <style>
+    .container-fluid{ background-color: #000000;
+        top: 0;
+    width: 100%}
+        .navbar navbar-inverse  {background-color: #000000;}
+        .navbar-brand a {color:black;}
+        .navbar-header a{color:black;}
+    </style>
+</head>
 <?php
 
 include_once("connection.php");
@@ -37,7 +50,7 @@ if ($users == 1) {
                 echo ('</div>');
                 echo ($userData["Username"]);
                 echo ('<div class="remove">');
-                echo ('<a class="link" href="removeusers.php?UserID=' . $userData["UserID"] .'">X</a>');
+                echo ('<a class="link" href="removeusersql.php?UserID=' . $userData["UserID"] .'">X</a>');
                 echo ('</div>');
                 echo('</div>');
             }
@@ -48,4 +61,7 @@ if ($users == 1) {
     echo('<br>No users to display');
 }
 ?>
+<div style="position: absolute; bottom: 5px; background-color: black" class="button">
+    <a href="settings.php" style="color: #ffffff">Go back to settings</a>
+</div>
 </html>

@@ -26,10 +26,12 @@
     </div>
     </nav>
     <br>
+<!-- Text explaining what the website is-->
 <h7 class="about"> This is a website that hosts music, that is built for user-friendly interactions while also providing artists a platform to upload their music. <br></h4>
 <h7 class="about">At the bottom of this page, you will find a button that takes you back to the homepage. If you click this you will see multiple options, if you already have an account,<br></h4>
 <h7 class="about">please click the login button and enter your username and password in order to access your library. So what's the scenario<br></h4>   
 
+<!-- Button to redirect back to homepage-->
 <div style="position: absolute; bottom: 5px; background-color: black" class="button">
     <a href="index.php" style="color: #ffffff">Go back to homepage</a>
     </div>

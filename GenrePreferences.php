@@ -50,9 +50,9 @@ $stmt->execute();
 while ($row =$stmt->fetch(PDO::FETCH_ASSOC))
 
 {
-
+/*Create boxes to be made with from the genre table*/
     echo'<form action="Addtopreferences.php" method="post">';
-    // adds space between each album
+
     echo str_repeat('&nbsp;', 10);
     ?><input name="check[]" multiple="multiple" id=".<?php echo $row['Genre'];
     ?>
@@ -74,6 +74,6 @@ echo str_repeat('&nbsp;', 8);
 </table>
 </form>
 <div style="position: absolute; bottom: 5px; background-color: black" class="button">
-    <a href="index.php" style="color: #ffffff">Go back to homepage</a>
+    <a href="settings.php" style="color: #ffffff">Go back to settings</a>
 </body>
 </html>

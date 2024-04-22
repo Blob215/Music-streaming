@@ -15,6 +15,7 @@
     </style>
 <nav class="navbar navbar-inverse" style="background-color:#000000; class='font-family: 'Times New Roman', Times, serif;">
     <div class = "container-fluid">
+    <!-- Displaying the navbar links and buttons -->
         <ul class="nav">
             <li class="nav"><a href="library.php" style="color: #ffffff">Library</a></li>
              

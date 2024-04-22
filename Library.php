@@ -30,6 +30,7 @@ if (!isset($_SESSION['UserID']))
     ?>
 </p>
 <?php
+// Select albums that the user has added based on their User ID
     $stmt=$conn->prepare("SELECT  tblmusic.artist as art, tblmusic.image as img, tblmusic.SongTitle as st FROM tblLibrary
     INNER JOIN tblmusic on tblmusic.MusicID = tbllibrary.MusicID
     WHERE tbllibrary.UserID = :userID");
@@ -38,11 +39,12 @@ if (!isset($_SESSION['UserID']))
     ?>
 <br>
 <br>
+
 <?php
 $pos = 1;
     echo("<table>");
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
-
+// Displaying all the albums chosen
         {
             
 

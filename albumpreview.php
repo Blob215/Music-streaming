@@ -19,7 +19,7 @@
     <div class = "container-fluid">
         <ul class="navbar-nav">
             <li><h1 class="login">Album preview</h1></li>
-            <li class="nav">Click_<a href="index.php" class="menu"> here </a>_to go back to the homepage</li>
+            <li class="nav">Click<a href="index.php" class="menu"> here </a>to go back to the homepage</li>
     </ul>
     </nav>
 <br>
@@ -31,17 +31,51 @@
 include_once "connection.php";
 $stmt=$conn->prepare("SELECT * FROM Tblmusic");
 $stmt->execute();
-while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
+/*Way to display all the albums */
+$pos = 1;
+    echo("<table>");
+    while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
 
         {
-            echo "<br />";
+            
+
+
+            if($pos==1){
+
+                echo("<tr>");
+
+            }
+            
+            echo("<td>");
+            echo '<div class="music">';
+
+            echo'<form action="addtolibrary.php" method="post">';
             echo ("<img width='200' length='200' src=images/".$row["Image"].">");
             echo "<br />";
-            echo $row["SongTitle"].  "<br />" .' By '.$row["Artist"]. "<br />" ;
+            echo $row["SongTitle"].  "<br />" .' By '.$row["Artist"]. "<br />";
+            
 
-        }
+            echo "<br />" .
+            "<br></form>";
+            echo '</div>';
+            echo("</td>");
+
+            $pos=$pos+1;
+
+            if($pos==6){
+
+                echo("</tr>");
+
+                $pos=1;
+
+            }
+            
+            
+            }
 $conn=null;
+echo("</table>");
 ?>
+</div>
 </form>
 </body>
 </html>

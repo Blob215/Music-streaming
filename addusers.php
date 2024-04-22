@@ -10,7 +10,7 @@ tblusers (Username,Surname,Forename,Password,Emailaddress,Phonenumber,Role)
 VALUES(:username,:surname,:forename,:password,:emailaddress,:phonenumber,0)");
 
 $hashed_password = password_hash($_POST["passwd"], PASSWORD_DEFAULT);
-
+/*All details to be added as a sign up*/
 $stmt->bindParam(':surname',$_POST["surname"]);
 $stmt->bindParam(':forename',$_POST["forename"]);
 $stmt->bindParam(':username',$_POST["username"]);

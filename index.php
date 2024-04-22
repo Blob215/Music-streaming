@@ -24,6 +24,7 @@
     <br>
     <br>
     <br>
+    <!-- Links to sign up and login of the website -->
         <ul class="menu">
             <li class="index"><a href="login.php"  style="color: #ffffff">Login</a></li>
              
@@ -39,6 +40,7 @@
     <br>
     <br>
     <br>
+    <!-- Links to album preview and about pages -->
         <ul class="menu">
             <li class="index"><a href="About.php" style="color: #ffffff">About</a></li>
             

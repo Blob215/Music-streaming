@@ -9,5 +9,5 @@ $stmt->bindParam(':userID', $_GET['UserID'], PDO::PARAM_INT);
 $stmt->execute();
 
 // sends the user to the change users page
-header('Location: changeusers.php');
+header('Location: removeusers.php');
 ?>

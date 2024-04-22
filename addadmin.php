@@ -12,6 +12,7 @@
     </style>
 </head>
 <body>
+<!-- Basic form to fill in field names to add admins-->
     <h1 class="admin">Add administrators</h1>
 <form class="admin" action='addadminsql.php' method="POST">
     UserID:<input type="text" name="userid"><br>

@@ -33,6 +33,7 @@
     </div>
     </nav>
     <br>
+<!-- text boxes for login -->
 <form action="login_process.php" method= "POST"  class="About">
  User name:<input type="text" name="Username" placeholder="Username"><br>
  Password:<input type="password" name="Pword" placeholder="Password"><br>

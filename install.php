@@ -22,7 +22,6 @@ CREATE TABLE tblMusic
 Artist VARCHAR(50) NOT NULL,
 Genre VARCHAR(50) NOT NULL,
 SongTitle VARCHAR(20) NOT NULL,
-TitleNo INT(1) NOT NULL,
 Image VARCHAR(255) NOT NULL)");
 $stmt->execute();
 $stmt->closeCursor(); 
@@ -94,4 +93,27 @@ $stmt = $conn->prepare("INSERT INTO tblUsers (UserID, Forename, Surname, Usernam
       $conn->rollback();
       throw $e;
   }
+
+$items = [
+    ['1', 'SOMAS', 'Hip hop', 'NY', 'black.jpg'],
+    ['2', 'Iron legion', 'R&B', 'I Want You', 'black.jpg'],
+    ['3', 'Bill Evans', 'Jazz', 'Blue in Green', 'black.jpg'],
+    ['4', 'Nina', 'Blues', 'Four fingers', 'black.jpg'],
+    ['5', 'John', 'Electronic', 'Mirror', 'black.jpg'],
+    ['6', 'Hooba', 'Rock', 'Kesen', 'black.jpg'],
+    ['7', 'Forrest', 'EDM', 'Frosts', 'black.jpg'],
+];
+$stmt = $conn->prepare("INSERT INTO tblMusic (MusicID, Artist, Genre, SongTitle, Image) VALUES (?,?,?,?,?)");
+  try {
+      $conn->beginTransaction();
+      foreach ($items as $row)
+      {
+          $stmt->execute($row);
+      }
+      $conn->commit();
+  }catch (Exception $e){
+      $conn->rollback();
+      throw $e;
+  }
+
 ?>

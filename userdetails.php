@@ -16,6 +16,7 @@ if (!isset($_SESSION['UserID']))
 <li><a href="settings.php">Go back to Settings</a></li>
 </div>
 <?php
+// Selecting the details for the user to change their details in the database
 $stmt = $conn->prepare("SELECT * FROM tblUsers WHERE UserID=:userID");
 $stmt->bindParam(':userID', $_SESSION['UserID'], PDO::PARAM_INT);
 $stmt->execute();

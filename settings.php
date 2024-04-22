@@ -7,6 +7,7 @@
     include_once('connection.php');
 session_start();
 ?>
+<!-- Links to other pages-->
 <br>
 <a class="settings" href="addmusic.php">Adding music</a>
 <br>
@@ -20,7 +21,7 @@ session_start();
 <a class="settings" href="logout.php">Logout</a>
 </div>
 <?php
-
+// IF the user is an admin, then display the admin specific pages
 if (!isset($_SESSION['UserID']))
 {   
     $_SESSION['backURL'] = $_SERVER['REQUEST_URI'];

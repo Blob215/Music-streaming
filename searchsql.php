@@ -5,6 +5,7 @@
 <?php
 include_once("connection.php");
 array_map("htmlspecialchars",$_POST);
+// Selecting the piece of music by the user based on what they searched for
 $stmt=$conn->prepare("SELECT * FROM tblmusic WHERE SongTitle=:title");
 $stmt->bindParam(':title',$_POST["SongTitle"]);
 $stmt->execute();
@@ -14,6 +15,7 @@ $stmt->execute();
     <button type="submit" name="save" class="btn btn-primary">Search</button>
 </form>
 <?php
+//Display song that is searched for
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
 
         {

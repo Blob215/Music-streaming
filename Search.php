@@ -28,6 +28,7 @@ if (!isset($_SESSION['UserID']))
     
 ?>
 <br>
+<!-- Search bar-->
 <form action="searchsql.php" method="post">
     <input type="text" placeholder="Search for song titles" name="SongTitle">
     <button type="submit" name="save" class="btn btn-primary">Search</button>
@@ -42,6 +43,7 @@ $stmt->execute();
 <?php
 $pos = 1;
 echo("<table>");
+// Displaying all the albums
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC))
 
         {
