@@ -36,7 +36,7 @@ $stmt->closeCursor();
 
 $stmt = $conn->prepare("DROP TABLE IF EXISTS tblPreferences;
 CREATE TABLE tblPreferences
-(UserID INT(6) NOT NULL,
+(UserID INT(7) NOT NULL,
 Genre VARCHAR(50) NOT NULL,
 PRIMARY KEY(UserID,Genre))");
 $stmt->execute();
@@ -44,7 +44,7 @@ $stmt->closeCursor();
 
 $stmt = $conn->prepare("DROP TABLE IF EXISTS tblGenres;
 CREATE TABLE TblGenres
-(Genre VARCHAR(20) PRIMARY KEY)");
+(Genre VARCHAR(50) PRIMARY KEY)");
 $stmt->execute();
 $stmt->closeCursor();
 // 2d array of Genres
